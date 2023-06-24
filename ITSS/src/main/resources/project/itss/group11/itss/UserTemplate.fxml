@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--<?import com.gluonhq.charm.glisten.control.Avatar?>-->
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -12,10 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="700.0" maxWidth="1000.0" minHeight="700.0" minWidth="1000.0"
-            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.itss.HelloController"
->
+<AnchorPane maxHeight="700.0" maxWidth="1000.0" minHeight="700.0" minWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.itss.group11.itss.controller.UserTemplateController">
 
    <children>
       <HBox layoutY="-1.0" prefHeight="85.0" prefWidth="1000.0" style="-fx-background-color: #db3700;">
@@ -40,7 +38,7 @@
       </HBox>
       <VBox layoutY="84.0" prefHeight="616.0" prefWidth="246.0" style="-fx-background-color: #9DB2BF;">
          <children>
-            <Button layoutX="15.0" layoutY="20.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="290.0" style="-fx-background-radius: 10;" text="Yêu cầu chỉnh sửa chấm công" textAlignment="CENTER">
+            <Button fx:id="timekeepingRequestBtn" layoutX="15.0" layoutY="20.0" mnemonicParsing="false" onAction="#selectRequestingToEditTimekeepingScreen" prefHeight="51.0" prefWidth="290.0" style="-fx-background-radius: 10;" text="Yêu cầu chỉnh sửa chấm công" textAlignment="CENTER">
                <font>
                   <Font size="17.0" />
                </font>
@@ -54,7 +52,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="274.0" style="-fx-background-radius: 10;" text="Xem chấm công" textAlignment="CENTER">
+            <Button fx:id="timekeepingViewBtn" mnemonicParsing="false" onAction="#selectViewingTimekeepingScreen" prefHeight="51.0" prefWidth="274.0" style="-fx-background-radius: 10;" text="Xem chấm công" textAlignment="CENTER">
                <font>
                   <Font size="17.0" />
                </font>

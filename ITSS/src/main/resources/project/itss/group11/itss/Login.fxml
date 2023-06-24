@@ -11,12 +11,10 @@
 
 <AnchorPane minHeight="700.0" minWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.itss.group11.itss.controller.LoginController">
    <children>
-      <BorderPane id="rootPane" fx:id="rootPane">
-          <stylesheets>
-              <URL value="@login.css" />
-          </stylesheets>
-      </BorderPane>
         <AnchorPane id="loginPane" fx:id="loginPane" layoutX="308.0" layoutY="186.0" prefHeight="300" prefWidth="400">
+            <stylesheets>
+                <URL value="@login.css" />
+            </stylesheets>
             <children>
                 <Label id="titleLabel" layoutX="170" layoutY="38" text="Đăng nhập" />
                 <Label id="usernameLabel" layoutX="70" layoutY="96" text="Tên đăng nhập" />

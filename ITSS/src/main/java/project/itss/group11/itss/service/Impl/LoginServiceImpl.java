@@ -1,6 +1,14 @@
 package project.itss.group11.itss.service.Impl;
 
+import project.itss.group11.itss.repository.Impl.UserRepositoryImpl;
+import project.itss.group11.itss.repository.UserRepository;
 import project.itss.group11.itss.service.LoginService;
 
 public class LoginServiceImpl implements LoginService {
+     private static UserRepository userRepository = new UserRepositoryImpl();
+
+    @Override
+    public boolean checkLogin(String user, String pass) {
+        return pass.equals(userRepository.getPass(user));
+    }
 }

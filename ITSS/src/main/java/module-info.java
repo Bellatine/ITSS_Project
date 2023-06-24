@@ -10,6 +10,8 @@ module project.itss.group11.itss {
     requires org.kordamp.bootstrapfx.core;
 //    requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
+    requires org.apache.logging.log4j;
 
     opens project.itss.group11.itss to javafx.fxml;
     exports project.itss.group11.itss;

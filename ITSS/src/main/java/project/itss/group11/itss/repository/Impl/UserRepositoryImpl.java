@@ -25,7 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
             }
             rs.close();
             stmt.close();
-
+            Constant.pool.releaseConnection(connection);
         }catch (SQLException ex) {
             logger.error("User: " + username + " - Error when get pass: ", ex);
             throw new RuntimeException(ex);

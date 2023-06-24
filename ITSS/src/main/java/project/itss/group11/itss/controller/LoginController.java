@@ -32,7 +32,7 @@ public class LoginController implements Initializable {
         // Thiết lập giá trị ban đầu
         //System.out.println("Load Oke");
         Constant.pool = ConnectionPool.getInstance("etc/database.config");
-        logger.info("Start load all conf");
+        //logger.info("Start load all conf");
     }
 
 
@@ -43,8 +43,8 @@ public class LoginController implements Initializable {
         String password = passwordField.getText();
         logger.info("Start login user: " + username + " , pass: " + password);
         if(loginService.checkLogin(username,password))
-            logger.info("Success");
-        else logger.info("Error");
+            logger.info("Login Success");
+        else logger.info("Login Fail");
 
         // Xử lý logic đăng nhập ở đây
         // ...

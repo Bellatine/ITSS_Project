@@ -52,7 +52,8 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
         LocalDateTime date1,date2;
 
         int day = time.getDayOfMonth();
-        logInfors = logInforRepository.getLogInforByDay(day,1);
+        int month = time.getMonth().getValue();
+        logInfors = logInforRepository.getLogInforByDay(day,month,1);
         if(logInfors.size()>=1){
             date1 = logInfors.get(0).getTimeStamp();
             TimekeepingDetail t1 = new TimekeepingDetail();
@@ -67,6 +68,7 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
                 t1.setType("Check out");
             timekeepingDetails.add(t1);
         }
+        System.out.println(logInfors.size());
         if(logInfors.size()>=2){
             date2 = logInfors.get(1).getTimeStamp();
             TimekeepingDetail t2 = new TimekeepingDetail();
@@ -80,7 +82,6 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
             else
                 t2.setType("Check out");
             timekeepingDetails.add(t2);
-
         }
         return timekeepingDetails;
     }

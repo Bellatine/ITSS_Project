@@ -135,3 +135,13 @@ org.postgresql.util.PSQLException: FATAL: database "ITSS_project" does not exist
 2023-06-25 08:52:28.041 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
 2023-06-25 08:53:36.337 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
 2023-06-25 08:53:36.338 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 09:05:05.675 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 09:05:05.676 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 09:10:04.852 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 09:10:04.854 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 09:11:20.351 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 09:11:20.352 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 09:13:43.501 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 09:13:43.502 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 09:15:28.625 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 09:15:28.626 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK

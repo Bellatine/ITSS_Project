@@ -24,6 +24,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class XemTQNVController {
+    public static LocalDate localDate = LocalDate.now();
     IEmployeeTimekeepingOverview employeeTimekeepingOverview = new EmployeeTimekeepingOverviewImpl();
     ObservableList<TimekeepingOverview> timekeepingOverviews = FXCollections.observableArrayList();
     LocalDateTime startTime = LocalDateTime.of(2023, 1, 1, 8, 00, 0);
@@ -82,7 +83,7 @@ public class XemTQNVController {
 
 
         // Đổ dữ liệu từ ObservableList vào TableView
-        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(LocalDate.now(),startTime,endTime);
+        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(XemTQNVController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }
     private Callback<TableColumn<TimekeepingOverview, Button>, TableCell<TimekeepingOverview, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass) {
@@ -96,7 +97,7 @@ public class XemTQNVController {
                     if(buttonStyleClass.equals("view-button"))
                     {
                         TimekeepingOverview timekeepingOverview1 = getTableRow().getItem();
-                        XemChiTietNhanVienController.localDate = LocalDate.of(date.getValue().getYear(),date.getValue().getMonth(),timekeepingOverview1.getDay());
+                        localDate = LocalDate.of(date.getValue().getYear(),date.getValue().getMonth(),timekeepingOverview1.getDay());
                         // Lấy đối tượng Stage hiện tại
                         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("XemChiTietNV.fxml"));
                         Parent root = null;
@@ -133,7 +134,8 @@ public class XemTQNVController {
     void filterTimekeepingByMonth(ActionEvent event) {
         // Lấy giá trị ngày từ DatePicker
         LocalDate selectedDate = date.getValue();
-        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(selectedDate,startTime,endTime);
+        XemTQNVController.localDate = selectedDate;
+        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(XemTQNVController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }
 

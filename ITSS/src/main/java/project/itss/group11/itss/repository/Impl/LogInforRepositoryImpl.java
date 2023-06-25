@@ -14,10 +14,13 @@ import java.sql.*;
 
 public class LogInforRepositoryImpl implements LogInforRepository {
     private static final Logger logger = LogManager.getLogger(LogInforRepositoryImpl.class);
-    private static final String q1 = "SELECT id,timestamp,device FROM logcc WHERE EXTRACT(DAY FROM timestamp) = ? and id=?";
+    private static final String q1 = "SELECT id,timestamp,device FROM logcc " +
+            "WHERE EXTRACT(DAY FROM timestamp) = ? " +
+            "and EXTRACT(MONTH FROM timestamp) = ?"+
+            "and id=?";
     private static final String q2 = "SELECT id,timestamp,device FROM logcc WHERE EXTRACT(MONTH FROM timestamp) = ? and id=?";
     @Override
-    public List<LogInfor> getLogInforByDay(int day,int user_id) {
+    public List<LogInfor> getLogInforByDay(int day,int month,int user_id) {
 
         List<LogInfor> logInfors = new ArrayList<>();
         try{
@@ -26,7 +29,8 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             PreparedStatement stmt = connection.prepareStatement(q1);
 
             stmt.setInt(1,day);
-            stmt.setInt(2,user_id);
+            stmt.setInt(2,month);
+            stmt.setInt(3,user_id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 LogInfor logInfor = new LogInfor();

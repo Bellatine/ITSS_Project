@@ -145,3 +145,159 @@ org.postgresql.util.PSQLException: FATAL: database "ITSS_project" does not exist
 2023-06-25 09:13:43.502 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
 2023-06-25 09:15:28.625 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
 2023-06-25 09:15:28.626 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 10:11:07.125 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 10:11:07.129 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 10:11:07.190 [JavaFX Application Thread] ERROR project.itss.group11.itss.Until.ConnectionPool - Error when create Connection: 
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.Driver.makeConnection(Driver.java:465) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.Driver.connect(Driver.java:264) ~[postgresql-42.2.23.jar:42.2.23]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:229) ~[java.sql:?]
+	at project.itss.group11.itss.Until.ConnectionPool.initializePool(ConnectionPool.java:65) ~[classes/:?]
+	at project.itss.group11.itss.Until.ConnectionPool.<init>(ConnectionPool.java:34) ~[classes/:?]
+	at project.itss.group11.itss.Until.ConnectionPool.getInstance(ConnectionPool.java:40) ~[classes/:?]
+	at project.itss.group11.itss.controller.XemTQNVController.initialize(XemTQNVController.java:65) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-17.0.2-mac.jar:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2673) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at project.itss.group11.itss.controller.UserTemplateController.selectViewingTimekeepingScreen(UserTemplateController.java:32) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-17.0.2-mac.jar:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1852) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8792) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-17.0.2-mac.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-17.0.2-mac.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:557) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:943) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.glass.ui.mac.MacView.notifyMouse(MacView.java:127) [javafx-graphics-17.0.2-mac.jar:?]
+2023-06-25 10:12:20.225 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 10:12:20.227 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 22:30:18.627 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 22:30:18.632 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 22:30:34.032 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-25 22:30:34.068 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-25 22:37:20.756 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 22:37:20.759 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 22:37:33.562 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-25 22:37:33.580 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:03:49.852 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:03:49.856 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:03:58.912 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:03:58.946 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:05:11.097 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:05:11.099 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:05:22.680 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:05:22.698 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:13:11.539 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:13:11.542 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:13:26.900 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.BaseController - Start login user: 20205103 , pass: nam
+2023-06-26 00:13:26.918 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.BaseController - Login Success
+2023-06-26 00:13:26.946 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.BaseController - 20205103
+2023-06-26 00:16:13.433 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:16:13.436 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:16:25.560 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:16:25.581 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:16:25.615 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:16:36.948 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:16:36.952 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:16:36.967 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:17:49.028 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:17:49.031 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:17:58.667 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:17:58.684 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:17:58.711 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:23:37.534 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:23:37.537 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:23:43.583 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:23:43.598 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:23:43.628 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:25:10.640 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:25:10.643 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:25:16.867 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:25:16.886 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:25:16.917 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:25:30.048 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:25:30.050 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:25:36.947 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:25:36.960 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:25:36.986 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:26:07.724 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:26:07.726 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:26:14.735 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:26:14.751 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:26:14.778 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:26:39.687 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205103
+2023-06-26 00:30:31.315 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-26 00:30:31.318 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-26 00:30:38.253 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205104 , pass: 123456
+2023-06-26 00:30:38.269 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:30:38.298 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205104
+2023-06-26 00:30:46.912 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:30:46.913 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:46:19.241 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-26 00:46:19.245 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:46:27.444 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205104 , pass: 123456
+2023-06-26 00:46:27.445 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-26 00:46:27.458 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205104
+2023-06-26 00:46:35.925 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.UserTemplateController - 20205104

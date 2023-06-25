@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 import project.itss.group11.itss.model.LogInfor;
 import project.itss.group11.itss.model.TimekeepingOverview;
 import project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl;
-import project.itss.group11.itss.repository.Impl.UserRepositoryImpl;
 import project.itss.group11.itss.repository.LogInforRepository;
-import project.itss.group11.itss.repository.LoginRepository;
-import project.itss.group11.itss.repository.UserRepository;
 import project.itss.group11.itss.service.IEmployeeTimekeepingOverview;
 
 import java.time.LocalDate;

@@ -9,15 +9,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
+import project.itss.group11.itss.model.Employee;
 import project.itss.group11.itss.service.Impl.LoginServiceImpl;
 import project.itss.group11.itss.service.LoginService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
+public class LoginController extends BaseController implements Initializable{
 
-    private static final Logger logger = LogManager.getLogger(LoginController.class);
     private static LoginService loginService = new LoginServiceImpl();
 
     @FXML
@@ -26,6 +26,7 @@ public class LoginController implements Initializable {
     @FXML
     private TextField usernameField;
 
+    private Employee user;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -41,9 +42,14 @@ public class LoginController implements Initializable {
 
         String username = usernameField.getText();
         String password = passwordField.getText();
+
         logger.info("Start login user: " + username + " , pass: " + password);
-        if(loginService.checkLogin(username,password))
+        if(loginService.checkLogin(username,password)) {
             logger.info("Login Success");
+            Constant.employee = loginService.getUserInfor(Integer.parseInt(username));
+            if(Constant.employee.getRole()==3)
+                changeScene("UserTemplate.fxml");
+        }
         else logger.info("Login Fail");
 
         // Xử lý logic đăng nhập ở đây

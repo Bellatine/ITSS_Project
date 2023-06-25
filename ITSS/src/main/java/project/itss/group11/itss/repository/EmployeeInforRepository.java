@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface EmployeeInforRepository {
     List<Employee> getEmployeeInfor(String query);
+    Employee getInforUser(int id);
+
 }

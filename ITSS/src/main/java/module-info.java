@@ -17,5 +17,6 @@ module project.itss.group11.itss {
     exports project.itss.group11.itss;
     exports project.itss.group11.itss.controller;
     opens project.itss.group11.itss.controller to javafx.fxml;
+    opens project.itss.group11.itss.model to javafx.base;
 
 }

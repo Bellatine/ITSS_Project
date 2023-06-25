@@ -5,5 +5,6 @@ import project.itss.group11.itss.model.LogInfor;
 import java.util.List;
 
 public interface LogInforRepository {
-    List<LogInfor> getLogInfor(String query);
+    List<LogInfor> getLogInforByDay(int day,int id);
+    List<LogInfor> getLogInforByMonth(int month,int id);
 }

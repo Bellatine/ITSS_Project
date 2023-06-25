@@ -4,6 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import project.itss.group11.itss.model.LogInfor;
 import project.itss.group11.itss.model.TimekeepingOverview;
+import project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl;
+import project.itss.group11.itss.repository.Impl.UserRepositoryImpl;
+import project.itss.group11.itss.repository.LogInforRepository;
+import project.itss.group11.itss.repository.LoginRepository;
+import project.itss.group11.itss.repository.UserRepository;
 import project.itss.group11.itss.service.IEmployeeTimekeepingOverview;
 
 import java.time.LocalDate;
@@ -13,6 +18,7 @@ import java.util.List;
 
 public class EmployeeTimekeepingOverviewImpl implements IEmployeeTimekeepingOverview {
 
+    LogInforRepository logInforRepository = new LogInforRepositoryImpl();
     @Override
     public int getDay(int Month,int year) {
         List<Integer> month31day = new ArrayList<>(List.of(1, 3, 5, 7, 8, 10,12));
@@ -59,25 +65,29 @@ public class EmployeeTimekeepingOverviewImpl implements IEmployeeTimekeepingOver
     @Override
     public ObservableList<TimekeepingOverview> getTimekeepingByMonth(LocalDate time,LocalDateTime start, LocalDateTime end) {
         ObservableList<TimekeepingOverview> timekeepingOverviews = FXCollections.observableArrayList();
-        List<LogInfor> logInfors = new ArrayList<>();
-        // data to test
-        LocalDateTime date1 = LocalDateTime.of(2023, 6, 24, 9, 00, 0);
-        LocalDateTime date2 = LocalDateTime.of(2023, 6, 24, 17, 0, 0);
-        LocalDateTime date3 = LocalDateTime.of(2023, 5, 23, 7, 00, 0);
-        LocalDateTime date4 = LocalDateTime.of(2023, 5, 23, 18, 0, 0);
-        // test
-        TimekeepingOverview t1 = new TimekeepingOverview(date1.getDayOfMonth()
-                , getStartTime(date1),getEndTime(date2),getComeLateTime(date1,start),
-                getReturnEarlyTime(date2,end));
-        TimekeepingOverview t2 = new TimekeepingOverview(date3.getDayOfMonth()
-                , getStartTime(date3),getEndTime(date4),getComeLateTime(date3,start),
-                getReturnEarlyTime(date4,end));
+        List<LogInfor> logInfors = logInforRepository.getLogInforByMonth(time.getMonth().getValue(),1);
+        LocalDateTime current_time = LocalDateTime.now();
+        LocalDateTime date1,date2;
+        TimekeepingOverview t1 = new TimekeepingOverview();
 
+        int current_day = current_time.getDayOfMonth();
+        for(int i = 0;i<logInfors.size();i++)
+        {
+            LogInfor log = logInfors.get(i);
+
+            date1 = log.getTimeStamp();
+            t1 = new TimekeepingOverview(date1.getDayOfMonth()
+                    , getStartTime(date1),null,getComeLateTime(date1,start),
+                null);
+            // Nếu có đử cả sáng và chiều
+            if(i+1 < logInfors.size()){
+                date2 = logInfors.get(i+1).getTimeStamp();
+                t1.setEnd(getEndTime(date2));
+                t1.setReturnEarly(getReturnEarlyTime(date2,end));
+            }
             timekeepingOverviews.add(t1);
-
-            timekeepingOverviews.add(t2);
-
-
+            i+=1;
+        }
         return timekeepingOverviews;
     }
 }

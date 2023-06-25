@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class LogInfor {
     private String  ID;
     private LocalDateTime timeStamp;
-    private String device;
+    private int device;
 
     public String getID() {
         return ID;
@@ -23,11 +23,11 @@ public class LogInfor {
         this.timeStamp = timeStamp;
     }
 
-    public String getDevice() {
+    public int getDevice() {
         return device;
     }
 
-    public void setDevice(String device) {
+    public void setDevice(int device) {
         this.device = device;
     }
 }

@@ -13,6 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import project.itss.group11.itss.HelloApplication;
+import project.itss.group11.itss.Until.ConnectionPool;
+import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.TimekeepingOverview;
 import project.itss.group11.itss.service.IEmployeeTimekeepingOverview;
 import project.itss.group11.itss.service.Impl.EmployeeTimekeepingOverviewImpl;
@@ -57,7 +59,9 @@ public class XemTQNVController {
     @FXML
     private TableColumn<TimekeepingOverview, Button> viewingDetailButton;
 
-    public void initialize() {
+    public void initialize()
+    {   // Mở connect
+        Constant.pool = ConnectionPool.getInstance("etc/database.config");
         // Liên kết các cột với thuộc tính tương ứng trong đối tượng TimekeepingOverview
         day.setCellValueFactory(new PropertyValueFactory<>("day"));
         start.setCellValueFactory(new PropertyValueFactory<>("start"));

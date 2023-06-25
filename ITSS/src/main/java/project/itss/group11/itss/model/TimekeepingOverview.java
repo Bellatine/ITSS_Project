@@ -36,4 +36,27 @@ public class TimekeepingOverview {
         this.comeLate = comeLate;
         this.returnEarly = returnEarly;
     }
+    public TimekeepingOverview() {
+
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
+    }
+
+    public void setComeLate(String comeLate) {
+        this.comeLate = comeLate;
+    }
+
+    public void setReturnEarly(String returnEarly) {
+        this.returnEarly = returnEarly;
+    }
 }

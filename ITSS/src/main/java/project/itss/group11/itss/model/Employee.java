@@ -3,18 +3,22 @@ package project.itss.group11.itss.model;
 import java.time.LocalDate;
 
 public class Employee {
-    private String ID;
+    private int ID;
     private String name;
     private int role;
-    private String Unit;
+    private int Unit;
     private LocalDate birthDate;
     private int gender;
 
-    public String getID() {
+    public Employee(int ID) {
+        this.ID = ID;
+    }
+
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -34,11 +38,11 @@ public class Employee {
         this.role = role;
     }
 
-    public String getUnit() {
+    public int getUnit() {
         return Unit;
     }
 
-    public void setUnit(String unit) {
+    public void setUnit(int unit) {
         Unit = unit;
     }
 

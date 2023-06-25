@@ -16,21 +16,25 @@ CREATE TABLE form (
     newtime timestamp with time zone NOT NULL
 );
 CREATE TABLE logCC (
+	"id" integer not NULL primary key,
     "timestamp" timestamp without time zone NOT NULL,
-    "id" integer NOT NULL,
-	"device" integer not null 
+    "idEmployee" integer NOT NULL,
+	"device" integer not null
 );
+
 CREATE TABLE employee(
     "id" integer primary key NOT NULL,
     "name" varchar (50) NOT NULL,
     "birthDate" date NOT NULL,
     "Unit" integer NOT NULL,
-    "role" integer NOT NULL
+    "role" integer NOT NULL,
+	"gender" integer Not NULL
 );
 
-
-
-
+insert into employee values(20205105,'Nguyen Van Nam','01-05-2002',2,1,1);
+insert into users(id,password) values(20205103,'nam');
+insert into users values(20205104,'123456');
+insert into users values(20205105,'man');
 
 delete from logcc;
 INSERT INTO logcc (timestamp, id, device)

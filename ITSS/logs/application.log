@@ -131,3 +131,7 @@ org.postgresql.util.PSQLException: FATAL: database "ITSS_project" does not exist
 2023-06-25 08:37:14.556 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
 2023-06-25 08:49:00.256 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
 2023-06-25 08:49:00.257 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 08:52:28.040 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 08:52:28.041 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-25 08:53:36.337 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-25 08:53:36.338 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK

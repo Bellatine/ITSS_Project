@@ -57,7 +57,7 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
             date1 = logInfors.get(0).getTimeStamp();
             TimekeepingDetail t1 = new TimekeepingDetail();
             t1.setTime(employeeTimekeepingOverview.getStartTime(date1));
-            t1.setComeLate(employeeTimekeepingOverview.getComeLateTime(date1,start));
+            t1.setComeLate(getComeLateTime(date1,start));
             t1.setReturnEarly("-");
             int machine = logInfors.get(0).getDevice();
             t1.setMachine(machine);
@@ -71,7 +71,7 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
             date2 = logInfors.get(1).getTimeStamp();
             TimekeepingDetail t2 = new TimekeepingDetail();
             t2.setTime(employeeTimekeepingOverview.getStartTime(date2));
-            t2.setReturnEarly(employeeTimekeepingOverview.getReturnEarlyTime(date2,end));
+            t2.setReturnEarly(getReturnEarlyTime(date2,end));
             t2.setComeLate("-");
             int machine = logInfors.get(1).getDevice();
             t2.setMachine(machine);

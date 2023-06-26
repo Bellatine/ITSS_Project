@@ -92,7 +92,7 @@ public class EmployeeOverviewController extends BaseController {
                         TimekeepingOverview timekeepingOverview1 = getTableRow().getItem();
                         localDate = LocalDate.of(date.getValue().getYear(),date.getValue().getMonth(),timekeepingOverview1.getDay());
                         // Lấy đối tượng Stage hiện tại
-                        changeScene("XemChiTietNV.fxml");
+                        changeScene("staff/XemChiTietNV.fxml");
 
                     }
                     else System.out.println("request button");

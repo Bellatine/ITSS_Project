@@ -48,7 +48,7 @@ public class LoginController extends BaseController implements Initializable{
             logger.info("Login Success");
             Constant.employee = loginService.getUserInfor(Integer.parseInt(username));
             if(Constant.employee.getRole()==3)
-                changeScene("UserTemplate.fxml");
+                changeScene("staff/UserTemplate.fxml");
         }
         else logger.info("Login Fail");
 

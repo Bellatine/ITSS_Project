@@ -64,7 +64,7 @@ public class DetailEmployeeViewingController extends BaseController{
     @FXML
     void backToPrvPage(ActionEvent event) {
         try {
-            changeScene("XemTQNV.fxml");
+            changeScene("staff/XemTQNV.fxml");
         }catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error at backToPrvPage function at XemChiTietNhanVienController");

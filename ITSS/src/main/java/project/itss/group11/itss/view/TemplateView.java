@@ -101,7 +101,7 @@ import javafx.scene.text.TextAlignment;
 // Tat ca cac view can implement TemplateView
 // Implement nhu nao thi xem QLNSView
 public interface TemplateView {
-	public void init(TemplateController myController);
+	public void init();
 	public Button createOptionButton(String option);
 	public void addOptionButtons(String... btnNames);
 }

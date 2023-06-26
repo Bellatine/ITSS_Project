@@ -6,8 +6,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import project.itss.group11.itss.view.TemplateView;
 
-// Controller cho cac view phai implement TemplateController
+
 // Se chua method de xu li notification va dropdown menu
-public interface TemplateController {
-	
+public class TemplateController {
+	TemplateView templateView;
+	public TemplateController(TemplateView templateView) {
+		this.templateView = templateView;
+	}
 }

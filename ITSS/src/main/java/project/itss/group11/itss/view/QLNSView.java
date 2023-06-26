@@ -23,7 +23,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 
-// Tao view khac: copy y het class nay ve, chi can doc huong dan -----------xxx----------- o duoi
+// Tao view khac: copy y het class nay ve, chi can doc huong dan -----------huong dan----------- o duoi
 
 //------------------- sua ten class (vd OfficeView) -------------------------------
 public class QLNSView extends Application implements TemplateView{
@@ -34,28 +34,37 @@ public class QLNSView extends Application implements TemplateView{
 	private Scene scene = new Scene(new Button("dummy node"));
 	private Stage stage;
 	
-//workspace (la phan pane trống ben phai)
+	private TemplateController templateController = new TemplateController(this);
+	
+//------------- Them controller cua minh -----------------	
+	private QLNSController qlnsController = new QLNSController(this);
+	
+	//workspace (la phan pane trống ben phai)
 	AnchorPane mainWorkspaceAnchorPane;
 	
 	
 	
 	public void start(Stage stage) throws IOException {
-//------------------ Set Controller o dong duoi ( vd init(new OfficerController()); ) ------------------------
-		init(new QLNSController());
-		this.stage = stage;
-		
+		init();
+		this.stage = stage;	
 		showHome();
 		
-//----------------  Add button chon chuc nang o day (phai de duoi lenh showHome()) --------------------
+//----------------  Add button chon chuc nang, button ten "hello world" se co id = "hello-world" --------------------
 		addOptionButtons("Thông tin chấm công của tôi", "Xem thông tin chấm công chi tiết của nhân viên", "Xem thông tin chấm công tổng hợp của nhân viên", "Xem yêu cầu chỉnh sửa chấm công", "Import file chấm công");
+
+//---------------------------- Query button de add listener ---------------------------
+		Button importOptionButton = (Button)(scene.lookup("#Import-file-chấm-công"));
+		importOptionButton.setOnMouseClicked(event -> showFileChooser());
+		System.out.print(importOptionButton);
 		
-//---------- Chen them lenh mainWorkspaceAnchorPane.getChildren().add(<node muon them>); ---------------
+		
+//---------- Add node vao workspace: mainWorkspaceAnchorPane.getChildren().add(<node muon them>); ---------------
 		
 	}
 	
-	public void init(TemplateController myController) {
+	public void init() {
 		rootFxmlLoader = new FXMLLoader(getClass().getResource("template.fxml"));
-		rootFxmlLoader.setController(myController);
+		rootFxmlLoader.setController(templateController);
 		try {
 			root = rootFxmlLoader.load();
 		} catch (IOException e) {
@@ -90,6 +99,8 @@ public class QLNSView extends Application implements TemplateView{
 		btn.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
 		btn.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		btn.setText(option);
+		option = option.replaceAll(" ", "-");   
+		btn.setId(option);
 		return btn;
 	}
 	
@@ -99,6 +110,13 @@ public class QLNSView extends Application implements TemplateView{
 			Button btn = createOptionButton(btnName);
 			mainOptionVBox.getChildren().add(btn);
 		}
+	}
+	
+	public void showFileChooser() {
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Chon file cham cong");
+		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("File cham cong","*.txt"));
+		File selectedFile = fileChooser.showOpenDialog(stage);
 	}
 	
 	public static void main(String [] args) {

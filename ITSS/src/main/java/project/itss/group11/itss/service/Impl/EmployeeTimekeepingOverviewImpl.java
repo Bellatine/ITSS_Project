@@ -2,6 +2,7 @@ package project.itss.group11.itss.service.Impl;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.LogInfor;
 import project.itss.group11.itss.model.TimekeepingOverview;
 import project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl;
@@ -62,7 +63,7 @@ public class EmployeeTimekeepingOverviewImpl implements IEmployeeTimekeepingOver
     @Override
     public ObservableList<TimekeepingOverview> getTimekeepingByMonth(LocalDate time,LocalDateTime start, LocalDateTime end) {
         ObservableList<TimekeepingOverview> timekeepingOverviews = FXCollections.observableArrayList();
-        List<LogInfor> logInfors = logInforRepository.getLogInforByMonth(time.getMonth().getValue(),1);
+        List<LogInfor> logInfors = logInforRepository.getLogInforByMonth(time.getMonth().getValue(), Constant.employee.getID());
         LocalDateTime current_time = LocalDateTime.now();
         LocalDateTime date1,date2;
         TimekeepingOverview t1 = new TimekeepingOverview();

@@ -4,26 +4,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 import javafx.util.Callback;
-import project.itss.group11.itss.HelloApplication;
 import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.TimekeepingOverview;
 import project.itss.group11.itss.service.IEmployeeTimekeepingOverview;
 import project.itss.group11.itss.service.Impl.EmployeeTimekeepingOverviewImpl;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class XemTQNVController {
+public class EmployeeOverviewController extends BaseController {
     public static LocalDate localDate = LocalDate.now();
     IEmployeeTimekeepingOverview employeeTimekeepingOverview = new EmployeeTimekeepingOverviewImpl();
     ObservableList<TimekeepingOverview> timekeepingOverviews = FXCollections.observableArrayList();
@@ -83,7 +76,7 @@ public class XemTQNVController {
 
 
         // Đổ dữ liệu từ ObservableList vào TableView
-        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(XemTQNVController.localDate,startTime,endTime);
+        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }
     private Callback<TableColumn<TimekeepingOverview, Button>, TableCell<TimekeepingOverview, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass) {
@@ -99,19 +92,7 @@ public class XemTQNVController {
                         TimekeepingOverview timekeepingOverview1 = getTableRow().getItem();
                         localDate = LocalDate.of(date.getValue().getYear(),date.getValue().getMonth(),timekeepingOverview1.getDay());
                         // Lấy đối tượng Stage hiện tại
-                        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("XemChiTietNV.fxml"));
-                        Parent root = null;
-                        try {
-                            root = loader.load();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-//
-                        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        Scene sceneB = new Scene(root);
-
-                        primaryStage.setScene(sceneB);
-                        primaryStage.show();
+                        changeScene("XemChiTietNV.fxml");
 
                     }
                     else System.out.println("request button");
@@ -134,8 +115,8 @@ public class XemTQNVController {
     void filterTimekeepingByMonth(ActionEvent event) {
         // Lấy giá trị ngày từ DatePicker
         LocalDate selectedDate = date.getValue();
-        XemTQNVController.localDate = selectedDate;
-        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(XemTQNVController.localDate,startTime,endTime);
+        EmployeeOverviewController.localDate = selectedDate;
+        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }
 

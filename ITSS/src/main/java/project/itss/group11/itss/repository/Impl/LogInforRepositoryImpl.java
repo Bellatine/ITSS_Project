@@ -14,13 +14,13 @@ import java.sql.*;
 
 public class LogInforRepositoryImpl implements LogInforRepository {
     private static final Logger logger = LogManager.getLogger(LogInforRepositoryImpl.class);
-    private static final String q1 = "SELECT id,timestamp,device FROM logcc " +
+    private static final String q1 = "SELECT id_employee,timestamp,device FROM logcc " +
             "WHERE EXTRACT(DAY FROM timestamp) = ? " +
             "and EXTRACT(MONTH FROM timestamp) = ?"+
-            "and id=?";
-    private static final String q2 = "SELECT id,timestamp,device FROM logcc WHERE EXTRACT(MONTH FROM timestamp) = ? and id=?";
+            "and id_employee=?";
+    private static final String q2 = "SELECT id_employee,timestamp,device FROM logcc WHERE EXTRACT(MONTH FROM timestamp) = ? and id_employee=?";
     @Override
-    public List<LogInfor> getLogInforByDay(int day,int month,int user_id) {
+    public List<LogInfor> getLogInforByDay(int day,int month,int employee_id) {
 
         List<LogInfor> logInfors = new ArrayList<>();
         try{
@@ -30,11 +30,11 @@ public class LogInforRepositoryImpl implements LogInforRepository {
 
             stmt.setInt(1,day);
             stmt.setInt(2,month);
-            stmt.setInt(3,user_id);
+            stmt.setInt(3,employee_id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 LogInfor logInfor = new LogInfor();
-                logInfor.setID(rs.getString("id"));
+                logInfor.setEmployeeID(rs.getInt("id_employee"));
                 logInfor.setTimeStamp(rs.getTimestamp("timestamp").toLocalDateTime());
                 logInfor.setDevice(rs.getInt("device"));
                 logInfors.add(logInfor);
@@ -49,7 +49,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
     }
 
     @Override
-    public List<LogInfor> getLogInforByMonth(int month, int id) {
+    public List<LogInfor> getLogInforByMonth(int month, int employee_id) {
         List<LogInfor> logInfors = new ArrayList<>();
         try{
             Connection connection = Constant.pool.getConnection();
@@ -57,11 +57,11 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             PreparedStatement stmt = connection.prepareStatement(q2);
 
             stmt.setInt(1,month);
-            stmt.setInt(2,id);
+            stmt.setInt(2,employee_id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 LogInfor logInfor = new LogInfor();
-                logInfor.setID(rs.getString("id"));
+                logInfor.setEmployeeID(rs.getInt("id_employee"));
                 logInfor.setTimeStamp(rs.getTimestamp("timestamp").toLocalDateTime());
                 logInfor.setDevice(rs.getInt("device"));
                 logInfors.add(logInfor);

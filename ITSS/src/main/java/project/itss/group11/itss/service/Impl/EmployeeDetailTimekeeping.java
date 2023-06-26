@@ -2,6 +2,7 @@ package project.itss.group11.itss.service.Impl;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.LogInfor;
 import project.itss.group11.itss.model.TimekeepingDetail;
 import project.itss.group11.itss.model.TimekeepingOverview;
@@ -53,7 +54,7 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
 
         int day = time.getDayOfMonth();
         int month = time.getMonth().getValue();
-        logInfors = logInforRepository.getLogInforByDay(day,month,1);
+        logInfors = logInforRepository.getLogInforByDay(day,month, Constant.employee.getID());
         if(logInfors.size()>=1){
             date1 = logInfors.get(0).getTimeStamp();
             TimekeepingDetail t1 = new TimekeepingDetail();

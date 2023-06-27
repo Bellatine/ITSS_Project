@@ -3,6 +3,7 @@ module project.itss.group11.itss {
     requires javafx.fxml;
     requires javafx.web;
     requires javafx.graphics;
+    requires java.desktop;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -13,6 +14,8 @@ module project.itss.group11.itss {
     requires com.almasb.fxgl.all;
     requires java.sql;
     requires org.apache.logging.log4j;
+	requires opencsv;
+	requires javafx.base;
 
     opens project.itss.group11.itss to javafx.fxml;
     exports project.itss.group11.itss;

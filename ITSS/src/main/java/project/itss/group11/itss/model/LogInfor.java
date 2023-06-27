@@ -3,7 +3,7 @@ package project.itss.group11.itss.model;
 import java.time.LocalDateTime;
 
 public class LogInfor {
-    private int  employee_id;
+    private int employee_id;
     private LocalDateTime timeStamp;
     private int device;
 

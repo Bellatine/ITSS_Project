@@ -17,12 +17,12 @@
             <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
          </padding>
          <children>
-            <Label maxWidth="1.7976931348623157E308" text="Select data to import" />
+            <Label maxWidth="1.7976931348623157E308" text="Select row(s) want to import" />
          </children>
       </HBox>
       <HBox alignment="BOTTOM_RIGHT" maxWidth="1.7976931348623157E308">
          <children>
-            <CheckBox maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sellect all" />
+            <CheckBox fx:id="selectAllCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sellect all" />
          </children>
       </HBox>
       <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
@@ -30,7 +30,7 @@
             <TableView fx:id="importFileChamCongTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                <columns>
                   <TableColumn fx:id="importFileChamCongIDColumn" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="ID" />
-                  <TableColumn fx:id="importFileChamCongTimestampColumn" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Time stamp" />
+                  <TableColumn fx:id="importFileChamCongTimestampColumn" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Timestamp" />
                   <TableColumn fx:id="importFileChamCongDeviceColumn" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Device" />
                   <TableColumn fx:id="importFileChamCongSelectColumn" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Select" />
                </columns>

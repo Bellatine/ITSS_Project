@@ -7,14 +7,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import project.itss.group11.itss.model.LogInfor;
 
 public class ImportFileChamCongModel {
 	private ArrayList<LogInfor> existedList = new ArrayList<LogInfor>();
 	private ArrayList<LogInfor> inputList = new ArrayList<LogInfor>();
-	private ArrayList<LogInfor> writeToDBList = new ArrayList<LogInfor>();
+	private ArrayList<Boolean> writeToDBList = new ArrayList<Boolean>();
 	private ArrayList<Boolean> isDuplicate = new ArrayList<Boolean>();
-	
+	private ObservableList<PreviewFileChamCongTableRowModel> tableRows = FXCollections.observableArrayList();
+	public ObservableList<PreviewFileChamCongTableRowModel> getTableRows() {
+		return tableRows;
+	}
+
 	public ArrayList<LogInfor> getInputList() {
 		return inputList;
 	}
@@ -28,10 +34,6 @@ public class ImportFileChamCongModel {
 	}
 	
 	public void checkDuplicate() {
-//		for(int i=0; i< inputList.size();i++) {
-//			if(existedList.contains(inputList.get(i)))
-//				isDuplicate.
-//		}
 		for(LogInfor logInfor: inputList) {
 			if(existedList.contains(logInfor))
 				isDuplicate.add(true);
@@ -42,30 +44,23 @@ public class ImportFileChamCongModel {
 	
 	public void inputRows(List<String[]> rows) {
 		for(String[] row: rows) {
-			System.out.println("Input a row");
-//			System.out.println(row[0]);
-//			System.out.println(row[1]);
-//			System.out.println(row[2]);
-//			StringBuilder builder = new StringBuilder();
-//	        for (int i = 0; i < row[0].length(); i++) {
-//	            char c = row[0].charAt(i);
-//	            if(c > 47 && c < 58){
-//	                builder.append(c);
-//	            }
-//	            System.out.println(c);
-//	        }
-			LogInfor temp = new LogInfor();
-			
-//			int id = Integer.parseInt(builder.toString());
+//			System.out.println("Input a row");
+
 			int id = Integer.parseInt(row[0]);
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 			LocalDateTime timeStamp = LocalDateTime.parse(row[1], formatter);
 			int device = Integer.parseInt(row[2]);
-			temp.setEmployeeID(id);
-			temp.setTimeStamp(timeStamp);
-			temp.setDevice(device);
-			inputList.add(temp);
-			System.out.println("Inputed a row");
+			
+			LogInfor logInfor = new LogInfor();
+			logInfor.setEmployeeID(id);
+			logInfor.setTimeStamp(timeStamp);
+			logInfor.setDevice(device);
+			inputList.add(logInfor);
+				
+			PreviewFileChamCongTableRowModel tableRow = new PreviewFileChamCongTableRowModel(id, timeStamp, device);
+			tableRows.add(tableRow);
+				
+//			System.out.println("Inputed a row");
 		}
 	}
 }

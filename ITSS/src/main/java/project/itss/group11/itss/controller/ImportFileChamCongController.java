@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,14 +18,16 @@ import project.itss.group11.itss.controller.TemplateController;
 import project.itss.group11.itss.model.ImportFileChamCongModel;
 import project.itss.group11.itss.view.TemplateView;
 
-public class QLNSController{
-	QLNSView qlnsView;
-	ImportFileChamCongModel importFileChamCongModel = new ImportFileChamCongModel();
-	public QLNSController(QLNSView qlnsView) {
+public class ImportFileChamCongController{
+	private QLNSView qlnsView;
+	private ImportFileChamCongModel importFileChamCongModel;
+	public ImportFileChamCongController(QLNSView qlnsView) {
 		this.qlnsView = qlnsView;
 	}
 	
 	public void handleCsvInput(File file) {
+		System.out.println("Handle csv input");
+		importFileChamCongModel = new ImportFileChamCongModel();
 		FileReader fileReader = null;
 		try {
 			fileReader = new FileReader(file);
@@ -47,11 +50,18 @@ public class QLNSController{
 			}
 			importFileChamCongModel.inputRows(rows);
 			importFileChamCongModel.checkDuplicate();
-			
+			System.out.println("Handled csv input");
 		}
 	}
 	
 	public void handleShowTable() {
-		qlnsView.showTable(importFileChamCongModel.getInputList(), importFileChamCongModel.getIsDuplicate());
+		qlnsView.showTable(importFileChamCongModel.getTableRows(), importFileChamCongModel.getIsDuplicate());
+	}
+	
+	public Boolean handleImport(ArrayList<Boolean> writeToDBList) {
+		
+		
+		
+		return true;
 	}
 }

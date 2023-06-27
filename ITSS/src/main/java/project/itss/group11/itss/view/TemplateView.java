@@ -1,6 +1,6 @@
 package project.itss.group11.itss.view;
 
-import project.itss.group11.itss.controller.QLNSController;
+import project.itss.group11.itss.controller.ImportFileChamCongController;
 import project.itss.group11.itss.controller.TemplateController;
 
 import java.io.File;

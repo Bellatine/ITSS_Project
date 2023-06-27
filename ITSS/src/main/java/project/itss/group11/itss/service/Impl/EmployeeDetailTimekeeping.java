@@ -54,7 +54,8 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
 
         int day = time.getDayOfMonth();
         int month = time.getMonth().getValue();
-        logInfors = logInforRepository.getLogInforByDay(day,month, Constant.employee.getID());
+        int year = time.getYear();
+        logInfors = logInforRepository.getLogInforByDay(day,month,year, Constant.employee.getID());
         if(logInfors.size()>=1){
             date1 = logInfors.get(0).getTimeStamp();
             TimekeepingDetail t1 = new TimekeepingDetail();

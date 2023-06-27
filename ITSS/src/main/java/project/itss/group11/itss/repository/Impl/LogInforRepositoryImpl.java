@@ -17,10 +17,14 @@ public class LogInforRepositoryImpl implements LogInforRepository {
     private static final String q1 = "SELECT id_employee,timestamp,device FROM logcc " +
             "WHERE EXTRACT(DAY FROM timestamp) = ? " +
             "and EXTRACT(MONTH FROM timestamp) = ?"+
+            "and EXTRACT(YEAR FROM timestamp) = ?" +
             "and id_employee=?";
-    private static final String q2 = "SELECT id_employee,timestamp,device FROM logcc WHERE EXTRACT(MONTH FROM timestamp) = ? and id_employee=?";
+    private static final String q2 = "SELECT id_employee,timestamp,device FROM logcc " +
+            "WHERE EXTRACT(MONTH FROM timestamp) = ? " +
+            "and EXTRACT(YEAR FROM timestamp) = ?" +
+            "and id_employee=?";
     @Override
-    public List<LogInfor> getLogInforByDay(int day,int month,int employee_id) {
+    public List<LogInfor> getLogInforByDay(int day,int month,int year,int employee_id) {
 
         List<LogInfor> logInfors = new ArrayList<>();
         try{
@@ -30,7 +34,8 @@ public class LogInforRepositoryImpl implements LogInforRepository {
 
             stmt.setInt(1,day);
             stmt.setInt(2,month);
-            stmt.setInt(3,employee_id);
+            stmt.setInt(3,year);
+            stmt.setInt(4,employee_id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 LogInfor logInfor = new LogInfor();
@@ -49,7 +54,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
     }
 
     @Override
-    public List<LogInfor> getLogInforByMonth(int month, int employee_id) {
+    public List<LogInfor> getLogInforByMonth(int month,int year, int employee_id) {
         List<LogInfor> logInfors = new ArrayList<>();
         try{
             Connection connection = Constant.pool.getConnection();
@@ -57,7 +62,8 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             PreparedStatement stmt = connection.prepareStatement(q2);
 
             stmt.setInt(1,month);
-            stmt.setInt(2,employee_id);
+            stmt.setInt(2,year);
+            stmt.setInt(3,employee_id);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()){
                 LogInfor logInfor = new LogInfor();

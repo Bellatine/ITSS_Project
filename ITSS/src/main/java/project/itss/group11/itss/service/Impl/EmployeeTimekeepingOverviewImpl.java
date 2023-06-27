@@ -63,7 +63,7 @@ public class EmployeeTimekeepingOverviewImpl implements IEmployeeTimekeepingOver
     @Override
     public ObservableList<TimekeepingOverview> getTimekeepingByMonth(LocalDate time,LocalDateTime start, LocalDateTime end) {
         ObservableList<TimekeepingOverview> timekeepingOverviews = FXCollections.observableArrayList();
-        List<LogInfor> logInfors = logInforRepository.getLogInforByMonth(time.getMonth().getValue(), Constant.employee.getID());
+        List<LogInfor> logInfors = logInforRepository.getLogInforByMonth(time.getMonth().getValue(),time.getYear(), Constant.employee.getID());
         LocalDateTime current_time = LocalDateTime.now();
         LocalDateTime date1,date2;
         TimekeepingOverview t1 = new TimekeepingOverview();

@@ -52,7 +52,7 @@ public class UserTemplateController extends BaseController implements Initializa
     @FXML
     void selectViewingTimekeepingScreen(ActionEvent event) {
         try {
-            changeScene("staff/XemTQNV.fxml");
+            //changeScene("staff/XemTQNV.fxml");
         }catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error at selectViewingTimekeepingScreen function at UserTemplateController");

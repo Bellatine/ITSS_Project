@@ -7,6 +7,9 @@ import project.itss.group11.itss.controller.TemplateController;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,81 +31,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 
-//public class TemplateView extends Application{
-//	// root node of the scene
-//	private Parent root;
-//	// use to load fxml to root
-//	private FXMLLoader rootFxmlLoader;
-//	private Scene scene = new Scene(new Button("dummy node"));
-//	private Stage stage;
-//	
-//	// workspace
-//	AnchorPane mainWorkspaceAnchorPane;
-//	
-//	public void start(Stage stage) throws IOException {
-//		init(new QLNSController());
-//		this.stage = stage;
-//		
-//		
-//		showHome();
-//	}
-//	
-//	public void init(TemplateController myController) {
-//		rootFxmlLoader = new FXMLLoader(getClass().getResource("template.fxml"));
-//		rootFxmlLoader.setController(myController);
-//		try {
-//			root = rootFxmlLoader.load();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		scene = new Scene(root);
-//		scene.getStylesheets().add(getClass().getResource("template.css").toExternalForm());
-//		// init workspace
-//		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
-//	}
-//	
-//	public void showHome() throws IOException{
-//		stage.setTitle("Phần mềm chấm công 4.0");
-//		stage.setScene(scene);
-//		stage.show();		
-//		// Query node de edit giao dien (optional)
-////		MenuButton notification = (MenuButton)(scene.lookup("#notification"));
-////		System.out.print(notification);
-////		notification.setText("Hello");
-////		Image bellIcon = new Image(getClass().getResourceAsStream("bell.png"));
-////      ImageView bellView = new ImageView(bellIcon);
-////      notification.setGraphic(bellView);
-////      notification.setText("🔔");
-//	}
-//	
-//	public void addOptionButtons(String... btnNames) {
-//		VBox mainOptionVBox = (VBox)(scene.lookup("#mainOptionVBox"));
-//		for (String btnName : btnNames) {
-//			Button btn = createOptionButton(btnName);
-//			mainOptionVBox.getChildren().add(btn);
-//		}
-//	}
-//	
-//	public Button createOptionButton(String option) {
-//		Button btn = new Button();
-//		btn.setTextAlignment(TextAlignment.CENTER);
-//		btn.setWrapText(true);
-//		btn.setMinSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
-//		btn.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
-//		btn.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-//		btn.setText(option);
-//		return btn;
-//	}
-//	
-//	public static void main(String [] args) {
-//		launch(args);
-//	}
-//}
-
-// Tat ca cac view can implement TemplateView
-// Implement nhu nao thi xem QLNSView
-public class TemplateView {
+// Cac view sau khi login can extends TemplateView de hien thi header va sidebar
+public abstract class TemplateView {
+	protected Logger logger = LogManager.getLogger(this.getClass());
 	protected Scene scene = new Scene(new Button("dummy node"));
 	protected Stage stage;
 	
@@ -161,8 +92,18 @@ public class TemplateView {
 		mainWorkspaceAnchorPane.getChildren().clear();
 		mainWorkspaceAnchorPane.getChildren().add(workspaceRoot);
 		WorkspaceController workspaceController = fxmlLoader.getController();
-		workspaceController.setMainWorkspaceAnchorPane(mainWorkspaceAnchorPane);
+		if(workspaceController != null)
+				workspaceController.setMainWorkspaceAnchorPane(mainWorkspaceAnchorPane);
+		else
+			logger.info(fxmlPath + " has no controller or load controller faled");
 	}
+	
+	public void addToWorkspace(WorkspaceView workspaceView) {
+		workspaceView.setMainWorkspaceAnchorPane(mainWorkspaceAnchorPane);
+		workspaceView.show();
+	}
+	
+	public abstract void show() throws IOException;
 	
 	public TemplateView(Stage stage) {
 		this.stage = stage;
@@ -171,5 +112,5 @@ public class TemplateView {
 	public TemplateView(){
 	}
 	
-	// Can them cac method xu li logout, setting va notification
+	// Can add listener cho logout va notification
 }

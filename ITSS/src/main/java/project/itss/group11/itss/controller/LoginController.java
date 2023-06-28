@@ -21,6 +21,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import project.itss.group11.itss.view.EmployeeView;
 
+// no longer need to extends BaseController
 public class LoginController extends BaseController implements Initializable{
 
     private static LoginService loginService = new LoginServiceImpl();
@@ -55,11 +56,10 @@ public class LoginController extends BaseController implements Initializable{
             if(Constant.employee.getRole()==3) {
                 //changeScene("staff/UserTemplate.fxml");
             	EmployeeView employeeView = new EmployeeView(HelloApplication.MAIN_STAGE);
-            	employeeView.main();
-            }
-            if(Constant.employee.getRole()==1) {
+            	employeeView.show();
+            }else if(Constant.employee.getRole()==1) {
             	QLNSView qlnsView = new QLNSView(HelloApplication.MAIN_STAGE);
-            	qlnsView.main();
+            	qlnsView.show();
             }
         }
         else logger.info("Login Fail");

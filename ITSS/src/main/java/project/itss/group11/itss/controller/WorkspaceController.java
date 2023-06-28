@@ -2,12 +2,17 @@ package project.itss.group11.itss.controller;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 
-public class WorkspaceController {
+// Cac controller cua phan workspace can extends class nay
+public abstract class WorkspaceController {
 	protected AnchorPane mainWorkspaceAnchorPane;
+	protected Logger logger = LogManager.getLogger(this.getClass());
 	public void setMainWorkspaceAnchorPane(AnchorPane mainWorkspaceAnchorPane) {
 		this.mainWorkspaceAnchorPane = mainWorkspaceAnchorPane;
 	}
@@ -25,6 +30,9 @@ public class WorkspaceController {
 		mainWorkspaceAnchorPane.getChildren().add(workspaceRoot);
 		
 		WorkspaceController workspaceController = fxmlLoader.getController();
-		workspaceController.setMainWorkspaceAnchorPane(mainWorkspaceAnchorPane);
+		if(workspaceController != null)
+			workspaceController.setMainWorkspaceAnchorPane(mainWorkspaceAnchorPane);
+		else
+			logger.info(fxmlPath + " has no controller or load controller faled");
 	}
 }

@@ -6,6 +6,7 @@ import project.itss.group11.itss.HelloApplication;
 
 import java.io.IOException;
 
+// no longer need this class
 public abstract class ChangeSceneControllers {
     protected void changeScene(String fxLink) {
         changeScene(fxLink, null);

@@ -37,35 +37,13 @@ import java.util.ArrayList;
 
 //------------------- sua ten class (vd OfficeView) -------------------------------
 public class QLNSView extends TemplateView{
-	private Scene scene = new Scene(new Button("dummy node"));
-	private Stage stage;
-	
-	private TemplateController templateController = new TemplateController(this);
 	
 //------------- Them controller cua minh -----------------	
-	private ImportFileChamCongController importFileChamCongController = new ImportFileChamCongController(this);
-	
-	//workspace (la phan pane trống ben phai)
-	AnchorPane mainWorkspaceAnchorPane;
+	//private ImportFileChamCongController importFileChamCongController = new ImportFileChamCongController(this);
 	
 	public QLNSView(Stage stage) {
 		this.stage = stage;
 	}
-		
-//---------- Add node vao workspace:  ---------------
-//		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("node.fxml"));
-//		fxmlLoader.setController(controller);
-//		node = fxmlLoader.load();
-//		AnchorPane.setTopAnchor(node, 0.0);
-//		AnchorPane.setBottomAnchor(node, 0.0);
-//		AnchorPane.setRightAnchor(node, 0.0);
-//		AnchorPane.setLeftAnchor(node, 0.0);
-//		mainWorkspaceAnchorPane.getChildren().clear();
-//		mainWorkspaceAnchorPane.getChildren().add(node);
-//		mainWorkspaceAnchorPane.applyCss();
-//		mainWorkspaceAnchorPane.layout();
-//		node.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
-//		node.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 	
 	
 	public void init() {
@@ -81,162 +59,14 @@ public class QLNSView extends TemplateView{
 		scene.getStylesheets().add(getClass().getResource("template.css").toExternalForm());
 	}
 	
-	public void showHome() throws IOException{
-		stage.setTitle("Phần mềm chấm công 4.0");
-		stage.setScene(scene);
-		stage.show();		
-	}
-	
-	public Button createOptionButton(String option) {
-		Button btn = new Button();
-		btn.setTextAlignment(TextAlignment.CENTER);
-		btn.setWrapText(true);
-		btn.setMinSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
-		btn.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
-		btn.setMaxSize(Double.MAX_VALUE, 130);
-		btn.setText(option);
-		option = option.replaceAll(" ", "-");   
-		btn.setId(option);
-		return btn;
-	}
-	
-	public void addOptionButton(Button btn) {
-		VBox mainOptionVBox = (VBox)(scene.lookup("#mainOptionVBox"));
-		VBox.setVgrow(btn, Priority.ALWAYS);
-		mainOptionVBox.getChildren().add(btn);
-	}
-	
-	public File showFileChooser(){
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("Chon file cham cong");
-		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("File cham cong","*.csv"));
-		File file = fileChooser.showOpenDialog(stage);
-		return file;	
-	}
-	
-	public void showImportFileChamCongWorkspace() {
-		System.out.println("Show workspace");
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("importFileChamCongWorkspace.fxml"));
-		VBox workspaceVbox = null;
-		try {
-			workspaceVbox = fxmlLoader.load();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// init workspace
-		AnchorPane.setTopAnchor(workspaceVbox, 0.0);
-		AnchorPane.setBottomAnchor(workspaceVbox, 0.0);
-		AnchorPane.setRightAnchor(workspaceVbox, 0.0);
-		AnchorPane.setLeftAnchor(workspaceVbox, 0.0);
-		mainWorkspaceAnchorPane.getChildren().clear();
-		mainWorkspaceAnchorPane.getChildren().add(workspaceVbox);
-		
-		// cai dat listener cho chon file khac button
-		Button chooseAnotherFileButton = (Button)(mainWorkspaceAnchorPane.lookup("#chooseAnotherFileButton"));
-		chooseAnotherFileButton.setOnMouseClicked(event ->{
-			System.out.println("Choose another file");
-			File file = showFileChooser();
-			importFileChamCongController.handleCsvInput(file);
-			showImportFileChamCongWorkspace();
-			importFileChamCongController.handleShowTable();
-		});
-		System.out.println("Showed workspace");
-	}
-	
-	public void showTable(ObservableList<PreviewFileChamCongTableRowModel> tableRows, ArrayList<Boolean> isDuplicate) {
-		System.out.println("Show table");
-		System.out.println("Table contains " + tableRows.size() + " row(s)");
-		mainWorkspaceAnchorPane.applyCss();
-		mainWorkspaceAnchorPane.layout();
-		TableView<PreviewFileChamCongTableRowModel> table = (TableView<PreviewFileChamCongTableRowModel>)(mainWorkspaceAnchorPane.lookup("#importFileChamCongTable"));
-		
-		TableColumn idColumn = table.getColumns().get(0);
-		TableColumn timeColumn = table.getColumns().get(1);
-		TableColumn deviceColumn = table.getColumns().get(2);
-		TableColumn selectColumn = table.getColumns().get(3);
-		idColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, Integer>("id"));
-		timeColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, LocalDateTime>("timestamp"));
-		deviceColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, Integer>("device"));
-		selectColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, CheckBox>("selectCheckBox"));
-		
-		table.setItems(tableRows);
-		for(int i=0; i< table.getItems().size(); i++) {
-			if(isDuplicate.get(i)) {
-				CheckBox checkBox = table.getItems().get(i).getSelectCheckBox();
-				checkBox.setDisable(true);
-				checkBox.setText("Disable");
-				
-			}
-		}
-		
-		// cai dat listener cho sellect all checkbox
-		CheckBox selectAllCheckBox = (CheckBox)(mainWorkspaceAnchorPane.lookup("#selectAllCheckBox"));	
-		selectAllCheckBox.selectedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				ObservableList<PreviewFileChamCongTableRowModel> rows = table.getItems();
-				if(selectAllCheckBox.isSelected()) {
-					for(PreviewFileChamCongTableRowModel row: rows) {
-						if(row.getSelectCheckBox().isDisabled())
-							continue;
-						row.getSelectCheckBox().setSelected(true);
-					}
-				}else {
-					for(PreviewFileChamCongTableRowModel row: rows) {
-						row.getSelectCheckBox().setSelected(false);
-					}
-				}
-				
-			}
-		});;
-		
-		// cai dat listener import button
-		Button importButton = (Button)(mainWorkspaceAnchorPane.lookup("#importButton"));
-		importButton.setOnMouseClicked(event -> {
-			ArrayList<Boolean> writeToDBList = new ArrayList<Boolean>();
-			for(int i=0; i< table.getItems().size(); i++) {
-				CheckBox checkBox = table.getItems().get(i).getSelectCheckBox();
-				if(checkBox.isSelected()) {
-					System.out.println(i);
-					writeToDBList.add(true);
-				}else
-					writeToDBList.add(false);
-			}
-			Boolean isSuccess = importFileChamCongController.handleImport(writeToDBList);
-			if(isSuccess) {
-				// Chuyen toi man hinh thong bao thanh cong
-				VBox vbox = new VBox();
-				vbox.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
-				vbox.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-				Label label = new Label("Successfully Imported!");
-				vbox.getChildren().add(label);
-				vbox.setAlignment(Pos.CENTER);
-				AnchorPane.setTopAnchor(vbox, 0.0);
-				AnchorPane.setBottomAnchor(vbox, 0.0);
-				AnchorPane.setRightAnchor(vbox, 0.0);
-				AnchorPane.setLeftAnchor(vbox, 0.0);
-				mainWorkspaceAnchorPane.getChildren().clear();
-				mainWorkspaceAnchorPane.getChildren().add(vbox);
-				mainWorkspaceAnchorPane.applyCss();
-				mainWorkspaceAnchorPane.layout();
-			}
-		});
-		
-		System.out.println("Showed table");
-	}
-	
-	public void main() throws IOException {
+	public void show() throws IOException {
 		init();
 		showHome();
 		// init workspace
 		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
 		Button importOptionButton = createOptionButton("Import file chấm công");
 		importOptionButton.setOnMouseClicked(event -> {
-			File file = showFileChooser();
-			importFileChamCongController.handleCsvInput(file);
-			showImportFileChamCongWorkspace();
-			importFileChamCongController.handleShowTable();
+			addToWorkspace(new ImportFileChamCongView());
 		});
 		addOptionButton(importOptionButton);
 	}

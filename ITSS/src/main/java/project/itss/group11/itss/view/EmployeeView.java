@@ -17,7 +17,7 @@ public class EmployeeView extends TemplateView{
 		this.stage = stage;
 	}
 	
-	public void main() throws IOException {
+	public void show() throws IOException {
 		init();
 		showHome();
 		// init workspace

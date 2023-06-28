@@ -1,5 +1,6 @@
 package project.itss.group11.itss.controller;
 
+import project.itss.group11.itss.view.ImportFileChamCongView;
 import project.itss.group11.itss.view.QLNSView;
 
 import java.io.File;
@@ -19,10 +20,10 @@ import project.itss.group11.itss.model.ImportFileChamCongModel;
 import project.itss.group11.itss.view.TemplateView;
 
 public class ImportFileChamCongController{
-	private QLNSView qlnsView;
+	private ImportFileChamCongView importFileChamCongView;
 	private ImportFileChamCongModel importFileChamCongModel;
-	public ImportFileChamCongController(QLNSView qlnsView) {
-		this.qlnsView = qlnsView;
+	public ImportFileChamCongController(ImportFileChamCongView importFileChamCongView) {
+		this.importFileChamCongView = importFileChamCongView;
 	}
 	
 	public void handleCsvInput(File file) {
@@ -55,7 +56,7 @@ public class ImportFileChamCongController{
 	}
 	
 	public void handleShowTable() {
-		qlnsView.showTable(importFileChamCongModel.getTableRows(), importFileChamCongModel.getIsDuplicate());
+		importFileChamCongView.showTable(importFileChamCongModel.getTableRows(), importFileChamCongModel.getIsDuplicate());
 	}
 	
 	public Boolean handleImport(ArrayList<Boolean> writeToDBList) {

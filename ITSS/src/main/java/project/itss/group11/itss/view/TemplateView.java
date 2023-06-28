@@ -53,12 +53,14 @@ public abstract class TemplateView {
 		}
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("template.css").toExternalForm());
+
 	}
 	
 	public void showHome() throws IOException{
 		stage.setTitle("Phần mềm chấm công 4.0");
 		stage.setScene(scene);
-		stage.show();		
+		stage.show();
+		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
 	}
 	
 	public Button createOptionButton(String option) {

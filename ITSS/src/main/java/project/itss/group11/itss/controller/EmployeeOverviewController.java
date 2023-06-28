@@ -57,7 +57,7 @@ public class EmployeeOverviewController extends WorkspaceController {
 
     public void initialize()
     {   // Mở connect
-        Constant.pool = ConnectionPool.getInstance("etc/database.config");
+        //Constant.pool = ConnectionPool.getInstance("etc/database.config");
         // Liên kết các cột với thuộc tính tương ứng trong đối tượng TimekeepingOverview
         day.setCellValueFactory(new PropertyValueFactory<>("day"));
         start.setCellValueFactory(new PropertyValueFactory<>("start"));

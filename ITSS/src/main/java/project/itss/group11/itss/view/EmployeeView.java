@@ -21,14 +21,13 @@ public class EmployeeView extends TemplateView{
 		init();
 		showHome();
 		// init workspace
-		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
+
 		Button importOptionButton = createOptionButton("Xem chấm công");
 		importOptionButton.setOnMouseClicked(event -> {
 			try {
 				addToWorkspace("XemTQNV.fxml");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.error("Error in Employee view", e);
 			}
 		});
 		addOptionButton(importOptionButton);

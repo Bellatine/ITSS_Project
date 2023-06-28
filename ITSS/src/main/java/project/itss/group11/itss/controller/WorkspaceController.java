@@ -10,7 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 
 // Cac controller cua phan workspace can extends class nay
-public abstract class WorkspaceController {
+public abstract class WorkspaceController extends BaseController {
+
 	protected AnchorPane mainWorkspaceAnchorPane;
 	protected Logger logger = LogManager.getLogger(this.getClass());
 	public void setMainWorkspaceAnchorPane(AnchorPane mainWorkspaceAnchorPane) {

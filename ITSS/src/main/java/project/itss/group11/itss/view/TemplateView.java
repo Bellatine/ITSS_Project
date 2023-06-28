@@ -62,7 +62,7 @@ public abstract class TemplateView {
 		stage.setTitle("Phần mềm chấm công 4.0");
 		stage.setScene(scene);
 		stage.show();
-		
+    
 		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
 		MenuButton dropdownMenuButton = (MenuButton)(scene.lookup("#dropdownMenuButton"));
 		MenuItem logoutMenuItem = dropdownMenuButton.getItems().get(1);
@@ -80,6 +80,7 @@ public abstract class TemplateView {
 	        stage.setScene(scene);
 	        stage.show();
 		});
+
 	}
 	
 	public Button createOptionButton(String option) {

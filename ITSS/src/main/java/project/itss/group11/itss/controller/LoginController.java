@@ -7,14 +7,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import project.itss.group11.itss.HelloApplication;
 import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.Employee;
 import project.itss.group11.itss.service.Impl.LoginServiceImpl;
+import project.itss.group11.itss.view.QLNSView;
 import project.itss.group11.itss.service.LoginService;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import project.itss.group11.itss.view.EmployeeView;
 
 public class LoginController extends BaseController implements Initializable{
 
@@ -38,7 +43,7 @@ public class LoginController extends BaseController implements Initializable{
 
 
     @FXML
-    public void handleLogin() {
+    public void handleLogin() throws IOException {
 
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -47,8 +52,15 @@ public class LoginController extends BaseController implements Initializable{
         if(loginService.checkLogin(username,password)) {
             logger.info("Login Success");
             Constant.employee = loginService.getUserInfor(Integer.parseInt(username));
-            if(Constant.employee.getRole()==3)
-                changeScene("staff/UserTemplate.fxml");
+            if(Constant.employee.getRole()==3) {
+                //changeScene("staff/UserTemplate.fxml");
+            	EmployeeView employeeView = new EmployeeView(HelloApplication.MAIN_STAGE);
+            	employeeView.main();
+            }
+            if(Constant.employee.getRole()==1) {
+            	QLNSView qlnsView = new QLNSView(HelloApplication.MAIN_STAGE);
+            	qlnsView.main();
+            }
         }
         else logger.info("Login Fail");
 

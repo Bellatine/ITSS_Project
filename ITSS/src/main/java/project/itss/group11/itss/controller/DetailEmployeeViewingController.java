@@ -16,7 +16,7 @@ import project.itss.group11.itss.service.Impl.EmployeeDetailTimekeeping;
 
 import java.time.LocalDateTime;
 
-public class DetailEmployeeViewingController extends BaseController{
+public class DetailEmployeeViewingController extends WorkspaceController{
 
     private IEmployeeDetailTimekeeping employeeDetailTimekeeping = new EmployeeDetailTimekeeping();
     ObservableList<TimekeepingDetail> timekeepingDetails = FXCollections.observableArrayList();
@@ -64,7 +64,7 @@ public class DetailEmployeeViewingController extends BaseController{
     @FXML
     void backToPrvPage(ActionEvent event) {
         try {
-            changeScene("staff/XemTQNV.fxml");
+            changeWorkspace("/view/XemTQNV.fxml");
         }catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error at backToPrvPage function at XemChiTietNhanVienController");

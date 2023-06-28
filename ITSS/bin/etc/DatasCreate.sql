@@ -25,5 +25,6 @@ CREATE TABLE employee(
     "name" varchar (50) NOT NULL,
     "birthDate" date NOT NULL,
     "Unit" integer NOT NULL,
+    -- 1: admin, 2: manager, 3: staff
     "role" integer NOT NULL
 );

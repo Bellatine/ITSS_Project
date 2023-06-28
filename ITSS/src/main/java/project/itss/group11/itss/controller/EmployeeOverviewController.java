@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
 import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
@@ -13,10 +14,11 @@ import project.itss.group11.itss.model.TimekeepingOverview;
 import project.itss.group11.itss.service.IEmployeeTimekeepingOverview;
 import project.itss.group11.itss.service.Impl.EmployeeTimekeepingOverviewImpl;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class EmployeeOverviewController extends BaseController {
+public class EmployeeOverviewController extends WorkspaceController {
     public static LocalDate localDate = LocalDate.now();
     IEmployeeTimekeepingOverview employeeTimekeepingOverview = new EmployeeTimekeepingOverviewImpl();
     ObservableList<TimekeepingOverview> timekeepingOverviews = FXCollections.observableArrayList();
@@ -92,7 +94,12 @@ public class EmployeeOverviewController extends BaseController {
                         TimekeepingOverview timekeepingOverview1 = getTableRow().getItem();
                         localDate = LocalDate.of(date.getValue().getYear(),date.getValue().getMonth(),timekeepingOverview1.getDay());
                         // Lấy đối tượng Stage hiện tại
-                        changeScene("staff/XemChiTietNV.fxml");
+                        try {
+							changeWorkspace("/view/XemChiTietNV.fxml");
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 
                     }
                     else System.out.println("request button");
@@ -119,5 +126,10 @@ public class EmployeeOverviewController extends BaseController {
         timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }
-
+    
+	public void setMainWorkspaceAnchorPane(AnchorPane mainWorkspaceAnchorPane) {
+		this.mainWorkspaceAnchorPane = mainWorkspaceAnchorPane;
+	}
+    
+    
 }

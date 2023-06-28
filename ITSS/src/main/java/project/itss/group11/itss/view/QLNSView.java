@@ -36,7 +36,7 @@ import java.util.ArrayList;
 // Tao view khac: copy y het class nay ve, chi can doc huong dan -----------huong dan----------- o duoi
 
 //------------------- sua ten class (vd OfficeView) -------------------------------
-public class QLNSView extends Application implements TemplateView{
+public class QLNSView extends TemplateView{
 	private Scene scene = new Scene(new Button("dummy node"));
 	private Stage stage;
 	
@@ -48,25 +48,9 @@ public class QLNSView extends Application implements TemplateView{
 	//workspace (la phan pane trống ben phai)
 	AnchorPane mainWorkspaceAnchorPane;
 	
-	
-	
-	public void start(Stage stage) throws IOException {
-		init();
-		this.stage = stage;	
-		showHome();
-		// init workspace
-		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
-//----------------  Add button chon chuc nang, button ten "hello world" se co id = "hello-world" --------------------
-		addOptionButtons("Thông tin chấm công của tôi", "Xem thông tin chấm công chi tiết của nhân viên", "Xem thông tin chấm công tổng hợp của nhân viên", "Xem yêu cầu chỉnh sửa chấm công", "Import file chấm công");
-
-//---------------------------- Query button de add listener ---------------------------
-		Button importOptionButton = (Button)(scene.lookup("#Import-file-chấm-công"));
-		importOptionButton.setOnMouseClicked(event -> {
-			File file = showFileChooser();
-			importFileChamCongController.handleCsvInput(file);
-			showImportFileChamCongWorkspace();
-			importFileChamCongController.handleShowTable();
-		});
+	public QLNSView(Stage stage) {
+		this.stage = stage;
+	}
 		
 //---------- Add node vao workspace:  ---------------
 //		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("node.fxml"));
@@ -82,7 +66,7 @@ public class QLNSView extends Application implements TemplateView{
 //		mainWorkspaceAnchorPane.layout();
 //		node.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
 //		node.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-	}
+	
 	
 	public void init() {
 		FXMLLoader rootFxmlLoader = new FXMLLoader(getClass().getResource("template.fxml"));
@@ -116,13 +100,10 @@ public class QLNSView extends Application implements TemplateView{
 		return btn;
 	}
 	
-	public void addOptionButtons(String... btnNames) {
+	public void addOptionButton(Button btn) {
 		VBox mainOptionVBox = (VBox)(scene.lookup("#mainOptionVBox"));
-		for (String btnName : btnNames) {
-			Button btn = createOptionButton(btnName);
-			VBox.setVgrow(btn, Priority.ALWAYS);
-			mainOptionVBox.getChildren().add(btn);
-		}
+		VBox.setVgrow(btn, Priority.ALWAYS);
+		mainOptionVBox.getChildren().add(btn);
 	}
 	
 	public File showFileChooser(){
@@ -245,7 +226,20 @@ public class QLNSView extends Application implements TemplateView{
 		System.out.println("Showed table");
 	}
 	
-	public static void main(String [] args) {
-		launch(args);
+	public void main() throws IOException {
+		init();
+		showHome();
+		// init workspace
+		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
+		Button importOptionButton = createOptionButton("Import file chấm công");
+		importOptionButton.setOnMouseClicked(event -> {
+			File file = showFileChooser();
+			importFileChamCongController.handleCsvInput(file);
+			showImportFileChamCongWorkspace();
+			importFileChamCongController.handleShowTable();
+		});
+		addOptionButton(importOptionButton);
 	}
+	
+	
 }

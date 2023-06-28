@@ -63,7 +63,7 @@ public class EmployeeOverviewController extends BaseController {
         returnEarly.setCellValueFactory(new PropertyValueFactory<>("returnEarly"));
         comeLate.setCellValueFactory(new PropertyValueFactory<>("comeLate"));
         // set default for selectingDateBtn
-        date.setValue(LocalDate.now());
+//        date.setValue(LocalDate.now());
 
 
         // Tạo cột View Button
@@ -76,8 +76,8 @@ public class EmployeeOverviewController extends BaseController {
 
 
         // Đổ dữ liệu từ ObservableList vào TableView
-        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
-        tableView.setItems(timekeepingOverviews);
+//        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
+//        tableView.setItems(timekeepingOverviews);
     }
     private Callback<TableColumn<TimekeepingOverview, Button>, TableCell<TimekeepingOverview, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass) {
         return column -> new TableCell<TimekeepingOverview, Button>() {
@@ -115,7 +115,14 @@ public class EmployeeOverviewController extends BaseController {
     void filterTimekeepingByMonth(ActionEvent event) {
         // Lấy giá trị ngày từ DatePicker
         LocalDate selectedDate = date.getValue();
-        EmployeeOverviewController.localDate = selectedDate;
+        if (selectedDate==null)
+        {
+            EmployeeOverviewController.localDate = LocalDate.now();
+            date.setValue(LocalDate.now());
+        }
+        else
+            EmployeeOverviewController.localDate = selectedDate;
+
         timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }

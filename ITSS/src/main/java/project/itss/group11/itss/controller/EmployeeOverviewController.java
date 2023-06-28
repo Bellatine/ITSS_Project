@@ -95,7 +95,7 @@ public class EmployeeOverviewController extends WorkspaceController {
                         localDate = LocalDate.of(date.getValue().getYear(),date.getValue().getMonth(),timekeepingOverview1.getDay());
                         // Lấy đối tượng Stage hiện tại
                         try {
-							changeWorkspace("/view/XemChiTietNV.fxml");
+							changeWorkspace("/project/itss/group11/itss/view/XemChiTietNV.fxml");
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();

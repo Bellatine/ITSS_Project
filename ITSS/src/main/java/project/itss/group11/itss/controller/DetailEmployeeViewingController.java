@@ -64,7 +64,7 @@ public class DetailEmployeeViewingController extends WorkspaceController{
     @FXML
     void backToPrvPage(ActionEvent event) {
         try {
-            changeWorkspace("/view/XemTQNV.fxml");
+            changeWorkspace("/project/itss/group11/itss/view/XemTQNV.fxml");
         }catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error at backToPrvPage function at XemChiTietNhanVienController");

@@ -695,3 +695,15 @@ org.postgresql.util.PSQLException: The column index is out of range: 6, number o
 2023-06-28 13:33:31.881 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
 2023-06-28 13:33:38.253 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
 2023-06-28 13:33:38.267 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-28 13:44:47.099 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-28 13:44:47.102 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-28 13:44:55.094 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-28 13:44:55.109 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-28 13:46:46.020 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-28 13:46:46.023 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-28 13:46:52.061 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-28 13:46:52.077 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-28 13:47:21.283 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-28 13:47:21.287 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-28 13:47:27.286 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-28 13:47:27.300 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

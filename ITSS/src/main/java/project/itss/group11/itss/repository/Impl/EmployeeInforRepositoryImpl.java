@@ -21,7 +21,7 @@ public class EmployeeInforRepositoryImpl implements EmployeeInforRepository {
 
     private static final Logger logger = LogManager.getLogger(EmployeeInforRepositoryImpl.class);
     private static final String getEmployeeInforQuery = "select * from employee where id = ?";
-    private static final String getEmployeeUnitInforQuery = "select * from emloyee where Unit = ?";
+    private static final String getEmployeeUnitInforQuery = "select * from employee where unit = ?";
     @Override
     public ObservableList<Employee> getEmployeeUnitInfor(int unitID) {
         ObservableList<Employee> listEmployee = FXCollections.observableArrayList();
@@ -29,7 +29,8 @@ public class EmployeeInforRepositoryImpl implements EmployeeInforRepository {
             Connection connection = Constant.pool.getConnection();
             PreparedStatement pstmt = connection.prepareStatement(getEmployeeUnitInforQuery);
             pstmt.setInt(1,unitID);
-            ResultSet resultSet = pstmt.getResultSet();
+            logger.info("Unit ID: " + unitID);
+            ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()){
                 Employee employee = new Employee(resultSet.getInt(1),resultSet.getString(2), resultSet.getTimestamp(3).toLocalDateTime().toLocalDate(), resultSet.getInt(4),resultSet.getInt(5),resultSet.getInt(6));
                 listEmployee.add(employee);

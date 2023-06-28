@@ -21,6 +21,8 @@ import java.util.ResourceBundle;
 
 public class SearchInfEmployeeUnitController extends WorkspaceController implements Initializable {
 
+    public static int employeeID;
+
     private static final SearchInfEmployeeUnitService service = new SearchInfEmployeeUnitServiceImpl();
 
     @FXML
@@ -51,11 +53,19 @@ public class SearchInfEmployeeUnitController extends WorkspaceController impleme
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         view.setCellFactory(createButtonCellFactory("View", "view-button"));
         employeeObservableList = service.employeeObservableList(Constant.employee.getUnit());
+        tableView.setItems(employeeObservableList);
     }
     @FXML
 
     void onSearchEmplyee(ActionEvent event) {
-
+        if(ID_Employee!=null){
+            try {
+                employeeID = Integer.parseInt(ID_Employee.getText());
+                changeWorkspace("/project/itss/group11/itss/view/manager/OverViewEmployeeUnit.fxml");
+            }catch (Exception e){
+                logger.error("Error when searchEmployee: ", e);
+            }
+        }
     }
 
     private Callback<TableColumn<Employee, Button>, TableCell<Employee, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass){
@@ -65,12 +75,13 @@ public class SearchInfEmployeeUnitController extends WorkspaceController impleme
             {
                 button.getStyleClass().add(buttonStyleClass);
                 button.setOnAction(event -> {
+                    Employee employee = getTableRow().getItem();
                     // Lấy đối tượng Stage hiện tại
                         try {
-                            changeWorkspace("/project/itss/group11/itss/view/XemChiTietNV.fxml");
+                            employeeID = employee.getID();
+                            changeWorkspace("/project/itss/group11/itss/view/manager/OverViewEmployeeUnit.fxml");
                         } catch (IOException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
+                            logger.error("Error in createButtonCellFactory ", e);
                         }
 
                 });

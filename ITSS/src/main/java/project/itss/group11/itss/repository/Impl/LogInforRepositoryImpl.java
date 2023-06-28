@@ -81,6 +81,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             logger.error("Error when getLogInforByMonth: ", ex);
             throw new RuntimeException(ex);
         }
+        logger.info("getLogByMonth: " + logInfors.size());
         return logInfors;
     }
 

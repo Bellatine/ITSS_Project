@@ -13,6 +13,7 @@ import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.Employee;
 import project.itss.group11.itss.service.Impl.LoginServiceImpl;
+import project.itss.group11.itss.view.ManagerView;
 import project.itss.group11.itss.view.QLNSView;
 import project.itss.group11.itss.service.LoginService;
 
@@ -61,7 +62,8 @@ public class LoginController extends BaseController implements Initializable{
             	QLNSView qlnsView = new QLNSView(HelloApplication.MAIN_STAGE);
             	qlnsView.show();
             }else if(Constant.employee.getRole()==2){
-
+                ManagerView managerView = new ManagerView(HelloApplication.MAIN_STAGE);
+                managerView.show();
             }
         }
         else logger.info("Login Fail");

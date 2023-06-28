@@ -60,6 +60,8 @@ public class LoginController extends BaseController implements Initializable{
             }else if(Constant.employee.getRole()==1) {
             	QLNSView qlnsView = new QLNSView(HelloApplication.MAIN_STAGE);
             	qlnsView.show();
+            }else if(Constant.employee.getRole()==2){
+
             }
         }
         else logger.info("Login Fail");

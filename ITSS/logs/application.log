@@ -787,3 +787,11 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 2023-06-28 18:35:27.819 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
 2023-06-28 18:35:36.908 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
 2023-06-28 18:35:36.931 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-28 21:57:24.183 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-28 21:57:24.186 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-28 21:57:31.211 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-28 21:57:31.242 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-28 23:10:00.897 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-28 23:10:00.902 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-28 23:10:33.859 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205104 , pass: 123456
+2023-06-28 23:10:33.974 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

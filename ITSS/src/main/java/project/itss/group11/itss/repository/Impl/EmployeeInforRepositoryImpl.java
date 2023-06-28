@@ -1,5 +1,7 @@
 package project.itss.group11.itss.repository.Impl;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import project.itss.group11.itss.Until.Constant;
@@ -11,15 +13,31 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeInforRepositoryImpl implements EmployeeInforRepository {
 
     private static final Logger logger = LogManager.getLogger(EmployeeInforRepositoryImpl.class);
     private static final String getEmployeeInforQuery = "select * from employee where id = ?";
+    private static final String getEmployeeUnitInforQuery = "select * from emloyee where Unit = ?";
     @Override
-    public List<Employee> getEmployeeInfor(String query) {
-        return null;
+    public ObservableList<Employee> getEmployeeUnitInfor(int unitID) {
+        ObservableList<Employee> listEmployee = FXCollections.observableArrayList();
+        try{
+            Connection connection = Constant.pool.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(getEmployeeUnitInforQuery);
+            pstmt.setInt(1,unitID);
+            ResultSet resultSet = pstmt.getResultSet();
+            while (resultSet.next()){
+                Employee employee = new Employee(resultSet.getInt(1),resultSet.getString(2), resultSet.getTimestamp(3).toLocalDateTime().toLocalDate(), resultSet.getInt(4),resultSet.getInt(5),resultSet.getInt(6));
+                listEmployee.add(employee);
+            }
+        }catch (Exception e){
+            logger.error("Error in getEmployeeUnitInfor: ", e);
+        }
+        return listEmployee;
     }
 
     @Override

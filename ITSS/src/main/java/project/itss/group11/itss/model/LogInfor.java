@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class LogInfor {
+    private int id;
     private int employee_id;
     private LocalDateTime timeStamp;
     private int device;
@@ -47,5 +48,13 @@ public class LogInfor {
 
     public void setDevice(int device) {
         this.device = device;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

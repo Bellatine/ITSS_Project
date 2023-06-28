@@ -63,7 +63,6 @@ public class QLNSView extends TemplateView{
 		init();
 		showHome();
 		// init workspace
-		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
 		Button importOptionButton = createOptionButton("Import file chấm công");
 		importOptionButton.setOnMouseClicked(event -> {
 			addToWorkspace(new ImportFileChamCongView());

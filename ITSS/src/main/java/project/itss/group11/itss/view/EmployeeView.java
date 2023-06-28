@@ -8,10 +8,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class EmployeeView extends TemplateView{
-
-	public EmployeeView() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	public EmployeeView(Stage stage) {
 		this.stage = stage;
@@ -21,7 +17,8 @@ public class EmployeeView extends TemplateView{
 		init();
 		showHome();
 		// init workspace
-		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
+
+		//mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
 		Button importOptionButton = createOptionButton("Xem chấm công");
 		importOptionButton.setOnMouseClicked(event -> {
 			try {

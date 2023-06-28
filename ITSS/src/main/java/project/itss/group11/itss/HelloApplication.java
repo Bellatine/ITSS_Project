@@ -11,7 +11,7 @@ import java.util.List;
 
 public class HelloApplication extends Application {
 
-    public static Stage MAIN_STAGE;
+    private Stage mainStage;
     private static final List<Stage> secondaryStages = new ArrayList<>();
     @Override
     public void start(Stage stage) throws IOException {
@@ -22,8 +22,8 @@ public class HelloApplication extends Application {
         stage.show();
 
 
-        MAIN_STAGE = stage;
-		MAIN_STAGE.setOnCloseRequest(ev -> {
+        mainStage = stage;
+		mainStage.setOnCloseRequest(ev -> {
             for (var secondaryStage : secondaryStages) {
                 secondaryStage.close();
             }

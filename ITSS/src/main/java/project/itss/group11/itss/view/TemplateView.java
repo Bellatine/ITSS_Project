@@ -1,5 +1,7 @@
 package project.itss.group11.itss.view;
 
+import project.itss.group11.itss.HelloApplication;
+import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.controller.ImportFileChamCongController;
 import project.itss.group11.itss.controller.WorkspaceController;
 import project.itss.group11.itss.controller.TemplateController;
@@ -22,6 +24,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -36,7 +39,6 @@ public abstract class TemplateView {
 	protected Logger logger = LogManager.getLogger(this.getClass());
 	protected Scene scene = new Scene(new Button("dummy node"));
 	protected Stage stage;
-	
 	protected TemplateController templateController = new TemplateController(this);
 	
 	//workspace (la phan pane trống ben phai)
@@ -53,12 +55,31 @@ public abstract class TemplateView {
 		}
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("template.css").toExternalForm());
+		stage.setScene(scene);
 	}
 	
-	public void showHome() throws IOException{
+	public void showHome() {
 		stage.setTitle("Phần mềm chấm công 4.0");
 		stage.setScene(scene);
-		stage.show();		
+		stage.show();
+		
+		mainWorkspaceAnchorPane = (AnchorPane)(scene.lookup("#mainWorkspaceAnchorPane"));
+		MenuButton dropdownMenuButton = (MenuButton)(scene.lookup("#dropdownMenuButton"));
+		MenuItem logoutMenuItem = dropdownMenuButton.getItems().get(1);
+		logoutMenuItem.setOnAction(event -> {
+			Constant.employee = null;
+			FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
+	        Scene scene = null;
+			try {
+				scene = new Scene(fxmlLoader.load());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        stage.setTitle("Hello!");
+	        stage.setScene(scene);
+	        stage.show();
+		});
 	}
 	
 	public Button createOptionButton(String option) {
@@ -75,6 +96,7 @@ public abstract class TemplateView {
 	}
 	
 	public void addOptionButton(Button btn) {
+		stage.setScene(scene);
 		VBox mainOptionVBox = (VBox)(scene.lookup("#mainOptionVBox"));
 		VBox.setVgrow(btn, Priority.ALWAYS);
 		mainOptionVBox.getChildren().add(btn);

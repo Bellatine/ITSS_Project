@@ -1,10 +1,14 @@
 package project.itss.group11.itss.controller;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,21 +48,22 @@ public class LoginController extends BaseController implements Initializable{
 
 
     @FXML
-    public void handleLogin() throws IOException {
+    public void handleLogin(Event event) throws IOException {
 
         String username = usernameField.getText();
         String password = passwordField.getText();
 
         logger.info("Start login user: " + username + " , pass: " + password);
         if(loginService.checkLogin(username,password)) {
+        	Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             logger.info("Login Success");
             Constant.employee = loginService.getUserInfor(Integer.parseInt(username));
             if(Constant.employee.getRole()==3) {
                 //changeScene("staff/UserTemplate.fxml");
-            	EmployeeView employeeView = new EmployeeView(HelloApplication.MAIN_STAGE);
+            	EmployeeView employeeView = new EmployeeView(stage);
             	employeeView.show();
             }else if(Constant.employee.getRole()==1) {
-            	QLNSView qlnsView = new QLNSView(HelloApplication.MAIN_STAGE);
+            	QLNSView qlnsView = new QLNSView(stage);
             	qlnsView.show();
             }else if(Constant.employee.getRole()==2){
 

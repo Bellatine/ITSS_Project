@@ -61,8 +61,8 @@ public class QLNSView extends TemplateView{
 	
 	public void show() throws IOException {
 		init();
-		showHome();
 		// init workspace
+		showHome();
 		Button importOptionButton = createOptionButton("Import file chấm công");
 		importOptionButton.setOnMouseClicked(event -> {
 			addToWorkspace(new ImportFileChamCongView());

@@ -17,4 +17,5 @@ public class TemplateController extends BaseController{
 	public TemplateController(TemplateView templateView) {
 		this.templateView = templateView;
 	}
+	
 }

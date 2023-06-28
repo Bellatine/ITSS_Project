@@ -19,7 +19,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class EmployeeOverviewController extends WorkspaceController {
-    public static LocalDate localDate = LocalDate.now();
+    public static LocalDate localDate = null;
     IEmployeeTimekeepingOverview employeeTimekeepingOverview = new EmployeeTimekeepingOverviewImpl();
     ObservableList<TimekeepingOverview> timekeepingOverviews = FXCollections.observableArrayList();
     LocalDateTime startTime = LocalDateTime.of(2023, 1, 1, 8, 00, 0);
@@ -65,7 +65,11 @@ public class EmployeeOverviewController extends WorkspaceController {
         returnEarly.setCellValueFactory(new PropertyValueFactory<>("returnEarly"));
         comeLate.setCellValueFactory(new PropertyValueFactory<>("comeLate"));
         // set default for selectingDateBtn
-        date.setValue(LocalDate.now());
+
+        date.setValue(EmployeeOverviewController.localDate);
+
+
+
 
 
         // Tạo cột View Button
@@ -78,7 +82,8 @@ public class EmployeeOverviewController extends WorkspaceController {
 
 
         // Đổ dữ liệu từ ObservableList vào TableView
-        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
+        if (EmployeeOverviewController.localDate != null)
+            timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }
     private Callback<TableColumn<TimekeepingOverview, Button>, TableCell<TimekeepingOverview, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass) {
@@ -122,7 +127,15 @@ public class EmployeeOverviewController extends WorkspaceController {
     void filterTimekeepingByMonth(ActionEvent event) {
         // Lấy giá trị ngày từ DatePicker
         LocalDate selectedDate = date.getValue();
-        EmployeeOverviewController.localDate = selectedDate;
+        if (selectedDate==null)
+        {
+            EmployeeOverviewController.localDate = LocalDate.now();
+            date.setValue(LocalDate.now());
+
+        }
+        else
+            EmployeeOverviewController.localDate = selectedDate;
+
         timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
     }

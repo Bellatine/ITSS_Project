@@ -129,6 +129,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             logger.error("Error in imoprtLogCC ", e);
         }
         return result;
+    }
 
     public int updateInfor(Form form) {
         try{

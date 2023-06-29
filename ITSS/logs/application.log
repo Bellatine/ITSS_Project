@@ -465,3 +465,41 @@ Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violate
 2023-06-30 00:03:13.998 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
 2023-06-30 00:19:27.773 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
 2023-06-30 00:19:27.775 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 01:13:17.112 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 01:13:17.120 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 01:13:34.310 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 01:13:34.356 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 01:18:30.427 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 01:18:30.431 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 01:18:36.294 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 01:18:36.311 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 01:18:38.054 [JavaFX Application Thread] INFO  project.itss.group11.itss.view.QLNSView - EditCC1.fxml has no controller or load controller faled
+2023-06-30 01:47:06.574 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 01:47:06.577 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 01:47:17.742 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 01:47:17.757 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 01:47:20.004 [JavaFX Application Thread] INFO  project.itss.group11.itss.view.QLNSView - EditCC1.fxml has no controller or load controller faled
+2023-06-30 01:55:08.395 [JavaFX Application Thread] INFO  project.itss.group11.itss.view.QLNSView - EditCC1.fxml has no controller or load controller faled
+2023-06-30 01:55:09.867 [JavaFX Application Thread] INFO  project.itss.group11.itss.view.QLNSView - EditCC1.fxml has no controller or load controller faled
+2023-06-30 01:55:49.757 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 01:55:49.760 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 01:55:56.334 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 01:55:56.351 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 01:55:58.632 [JavaFX Application Thread] INFO  project.itss.group11.itss.view.QLNSView - EditCC1.fxml has no controller or load controller faled
+2023-06-30 01:56:50.341 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 01:56:50.347 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 01:56:57.566 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 01:56:57.582 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 01:56:59.837 [JavaFX Application Thread] INFO  project.itss.group11.itss.view.QLNSView - EditCC1.fxml has no controller or load controller faled
+2023-06-30 02:00:09.782 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 02:00:09.793 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 02:00:18.166 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 02:00:18.187 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 02:02:50.955 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 02:02:50.958 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 02:02:56.422 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 02:02:56.442 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 02:03:43.328 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 02:03:43.331 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 02:03:49.142 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 02:03:49.159 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

@@ -19,7 +19,7 @@ import project.itss.group11.itss.model.Employee;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+//no longer need this
 public class AdminTemplateController extends BaseController implements Initializable {
 
     @FXML
@@ -41,18 +41,13 @@ public class AdminTemplateController extends BaseController implements Initializ
 
     @FXML
     void selectViewingTimekeepingScreen(ActionEvent event) {
-        try {
-            changeScene("staff/XemTQNV.fxml");
-        }catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error at selectViewingTimekeepingScreen function at AdminTemplateController");
-        }
+        
     }
 
     @FXML
     void selectEditTimekeepingScreen(ActionEvent event) {
         try {
-            changeScene("EditCC1.fxml");
+           // changeScene("EditCC1.fxml");
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("Error at selectEditTimekeepingScreen function at AdminTemplateController");

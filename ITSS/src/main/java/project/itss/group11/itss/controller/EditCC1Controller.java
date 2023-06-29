@@ -19,12 +19,11 @@ import project.itss.group11.itss.model.Form;
 import project.itss.group11.itss.model.TimekeepingOverview;
 import project.itss.group11.itss.service.IFormOverviewService;
 import project.itss.group11.itss.service.Impl.FormOverviewServiceImpl;
-import project.itss.group11.itss.controller.ChangeSceneControllers;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class EditCC1Controller extends BaseController{
+public class EditCC1Controller extends WorkspaceController{
     public Form form1;
     IFormOverviewService formOverviewService =  new FormOverviewServiceImpl();
     ObservableList<Form> dataList = FXCollections.observableArrayList();
@@ -47,6 +46,7 @@ public class EditCC1Controller extends BaseController{
 
     public void initialize()
     {
+    	System.out.println("Init EditCC1");
         idnv.setCellValueFactory(new PropertyValueFactory<>("idnv"));
         oldT.setCellValueFactory(new PropertyValueFactory<>("oldT"));
         newT.setCellValueFactory(new PropertyValueFactory<>("newT"));
@@ -55,6 +55,7 @@ public class EditCC1Controller extends BaseController{
         updateButton.setCellFactory(createButtonCellFactory("Update", "update-button"));
         dataList = formOverviewService.getFormData();
         tableView.setItems(dataList);
+        System.out.println("Init EditCC1");
     }
 
     private Callback<TableColumn<Form, Button>, TableCell<Form, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass) {
@@ -67,7 +68,12 @@ public class EditCC1Controller extends BaseController{
                     form1 = getTableRow().getItem();
                     if (form1 != null) {
                         UpdateController.setForm(form1);
-                        changeScene("Update.fxml");
+                        try {
+							changeWorkspace("Update.fxml");
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
                     }
                 });
             }
@@ -82,6 +88,7 @@ public class EditCC1Controller extends BaseController{
                 }
             }
         };
+        
     }
 
 }

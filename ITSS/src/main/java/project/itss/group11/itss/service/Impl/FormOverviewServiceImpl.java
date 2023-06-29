@@ -17,6 +17,7 @@ public class FormOverviewServiceImpl implements IFormOverviewService {
 
     @Override
     public ObservableList<Form> getFormData(){
+    	System.out.println("Get formdata");
         ObservableList<Form> forms = FXCollections.observableArrayList();
         List<FormDatabase> formDatabases = formDataRepository.getFormData();
         for(FormDatabase formDatabase : formDatabases){
@@ -27,7 +28,9 @@ public class FormOverviewServiceImpl implements IFormOverviewService {
                                 formDatabase.getNewDevice(),
                                 formDatabase.getIdlog());
             forms.add(form);
+            System.out.println(form);
         }
+        System.out.println("Getted formdata");
         return forms;
     }
 }

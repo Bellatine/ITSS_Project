@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 
 
 
-public class UpdateController {
+public class UpdateController extends WorkspaceController{
 
     IUpdateService service = new UpdateServiceImpl();
 

@@ -13,9 +13,9 @@
     <children>
         <TableView fx:id="tableView" layoutX="1.0" layoutY="107.0" prefHeight="505.0" prefWidth="752.0">
             <columns>
-                <TableColumn fx:id="id" prefWidth="74.55337524414062" text="Mã nhân viên" />
-                <TableColumn fx:id="name" prefWidth="74.55337524414062" text="Tên nhân viên" />
-                <TableColumn fx:id="view" prefWidth="75.0" />
+                <TableColumn fx:id="id" prefWidth="54.55337524414062" text="Mã nhân viên" />
+                <TableColumn fx:id="name" prefWidth="104.55337524414062" text="Tên nhân viên" />
+                <TableColumn fx:id="view" prefWidth="65.0" />
             </columns>
             <columnResizePolicy>
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

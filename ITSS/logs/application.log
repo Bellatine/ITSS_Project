@@ -1523,3 +1523,124 @@ Message: Content is not allowed in prolog.
 2023-06-29 02:16:50.361 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
 2023-06-29 02:16:53.840 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
 2023-06-29 02:17:03.789 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 9
+2023-06-29 11:16:26.148 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 11:16:26.151 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 11:16:33.351 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-29 11:16:33.372 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 11:16:39.864 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:17:04.748 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:17:07.559 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:17:16.402 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:18:31.504 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:18:33.376 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 9
+2023-06-29 11:18:37.110 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:18:39.211 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:18:41.964 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:18:46.164 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:18:50.653 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 9
+2023-06-29 11:19:48.349 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 11:19:48.352 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 11:19:54.484 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205013 , pass: nam
+2023-06-29 11:19:54.499 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Fail
+2023-06-29 11:19:57.272 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205013 , pass: nam
+2023-06-29 11:19:57.273 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Fail
+2023-06-29 11:30:42.247 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 11:30:42.250 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 11:30:46.922 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: nam , pass: s
+2023-06-29 11:30:48.782 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: nam , pass: s
+2023-06-29 11:33:35.553 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-29 11:33:35.569 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 11:33:47.131 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:33:52.637 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:34:00.155 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:34:00.913 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:34:02.442 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:34:08.689 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 9
+2023-06-29 11:37:27.736 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:37:29.393 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:37:32.683 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 9
+2023-06-29 11:37:37.202 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:37:41.096 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:45:41.399 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 11:45:43.326 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.EmployeeInforRepositoryImpl - Unit ID: 2
+2023-06-29 11:45:44.604 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 9
+2023-06-29 11:52:08.891 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 11:52:08.894 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 11:52:40.448 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205104 , pass: 1
+2023-06-29 11:52:40.467 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Fail
+2023-06-29 11:58:42.477 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 11:58:42.481 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 11:58:46.546 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: nam , pass: a
+2023-06-29 11:59:26.126 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: a
+2023-06-29 11:59:26.139 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Fail
+2023-06-29 12:02:42.008 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 12:02:42.011 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 12:02:45.565 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: nam , pass: a
+2023-06-29 12:02:45.573 [JavaFX Application Thread] ERROR project.itss.group11.itss.controller.LoginController - Error in handleLogin 
+java.lang.NumberFormatException: For input string: "nam"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:67) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:668) ~[?:?]
+	at java.lang.Integer.parseInt(Integer.java:786) ~[?:?]
+	at project.itss.group11.itss.repository.Impl.UserRepositoryImpl.getPass(UserRepositoryImpl.java:21) ~[classes/:?]
+	at project.itss.group11.itss.service.Impl.LoginServiceImpl.checkLogin(LoginServiceImpl.java:16) ~[classes/:?]
+	at project.itss.group11.itss.controller.LoginController.handleLogin(LoginController.java:68) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:77) ~[javafx-base-17.0.2-mac.jar:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:275) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1854) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1724) ~[javafx-fxml-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8792) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-17.0.2-mac.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:208) ~[javafx-controls-17.0.2-mac.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:234) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-17.0.2-mac.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-17.0.2-mac.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3897) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1878) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2623) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:557) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:943) [javafx-graphics-17.0.2-mac.jar:?]
+	at com.sun.glass.ui.mac.MacView.notifyMouse(MacView.java:127) [javafx-graphics-17.0.2-mac.jar:?]
+2023-06-29 12:02:45.585 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Fail
+2023-06-29 12:02:52.250 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 2005103 , pass: 1
+2023-06-29 12:02:52.262 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Fail
+2023-06-29 12:02:58.269 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205103 , pass: nam
+2023-06-29 12:02:58.270 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

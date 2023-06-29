@@ -14,15 +14,18 @@ import java.util.List;
 
 public class FormOverviewServiceImpl implements IFormOverviewService {
     FormDataRepository formDataRepository = new FormDataRepositoryImpl();
-    Form form = new Form();
+
     @Override
     public ObservableList<Form> getFormData(){
         ObservableList<Form> forms = FXCollections.observableArrayList();
         List<FormDatabase> formDatabases = formDataRepository.getFormData();
         for(FormDatabase formDatabase : formDatabases){
-            form.setIdnv(formDatabase.getIdnhanvien());
-            form.setNewT(formDatabase.getNewtime());
-            form.setOldT(formDatabase.getOldtime());
+            Form form = new Form(formDatabase.getIdform(),formDatabase.getIdnhanvien(),
+                                formDatabase.getOldtime(),
+                                formDatabase.getNewtime(),
+                                formDatabase.getOldDevice(),
+                                formDatabase.getNewDevice(),
+                                formDatabase.getIdlog());
             forms.add(form);
         }
         return forms;

@@ -36,6 +36,10 @@ public class EditCC1Controller extends BaseController{
     @FXML
     private TableColumn<Form, LocalDateTime> newT;
     @FXML
+    private TableColumn<Form, Integer> oldD;
+    @FXML
+    private TableColumn<Form, Integer> newD;
+    @FXML
     private TableColumn<Form, Button> updateButton;
 
     @FXML
@@ -46,6 +50,8 @@ public class EditCC1Controller extends BaseController{
         idnv.setCellValueFactory(new PropertyValueFactory<>("idnv"));
         oldT.setCellValueFactory(new PropertyValueFactory<>("oldT"));
         newT.setCellValueFactory(new PropertyValueFactory<>("newT"));
+        oldD.setCellValueFactory(new PropertyValueFactory<>("oldDevice"));
+        newD.setCellValueFactory(new PropertyValueFactory<>("newDevice"));
         updateButton.setCellFactory(createButtonCellFactory("Update", "update-button"));
         dataList = formOverviewService.getFormData();
         tableView.setItems(dataList);
@@ -62,7 +68,6 @@ public class EditCC1Controller extends BaseController{
                     if (form1 != null) {
                         UpdateController.setForm(form1);
                         changeScene("Update.fxml");
-                        System.out.println("Cập nhật biểu mẫu: " + form1.getIdnv());
                     }
                 });
             }

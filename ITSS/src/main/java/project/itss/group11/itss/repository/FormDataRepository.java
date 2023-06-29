@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface FormDataRepository {
     ObservableList<FormDatabase> getFormData();
+    int updateForm(int formID, int status);
 }

@@ -16,14 +16,20 @@ import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.Employee;
 import project.itss.group11.itss.model.Form;
+import project.itss.group11.itss.service.IUpdateService;
+import project.itss.group11.itss.service.Impl.UpdateServiceImpl;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 
 
 public class UpdateController {
+
+    IUpdateService service = new UpdateServiceImpl();
 
     @FXML
     private Label idLabel;
@@ -32,31 +38,53 @@ public class UpdateController {
     private Label oldTimestampLabel;
 
     @FXML
+    private Label newTimestampLabel;
+
+    @FXML
+    private Label oldDevice;
+
+    @FXML
+    private Label newDevice;
+
+    @FXML
     private TextField timestampTextField;
+
+    @FXML
+    private TextField deviceTextField;
 
     @FXML
     private Button rejectButton;
 
     @FXML
     private Button acceptButton;
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private static Form form;
 
     public void initialize() {
         idLabel.setText(Integer.toString(form.getIdnv()));
-        oldTimestampLabel.setText(form.getOldT().toString());
+        oldTimestampLabel.setText(form.getOldT().format(formatter));
+        newTimestampLabel.setText(form.getNewT().format(formatter));
+        oldDevice.setText(String.valueOf(form.getOldDevice()));
+        newDevice.setText(String.valueOf(form.getNewDevice()));
+        timestampTextField.setText(form.getNewT().format(formatter));
+        deviceTextField.setText(String.valueOf(form.getNewDevice()));
+
         return;
     }
     public static void setForm(Form form){
         UpdateController.form = form;
     }
     @FXML
-    private void handleRejectButton() {
+    private void handleAcceptButton() {
+        form.setNewT(LocalDateTime.parse(timestampTextField.getText(),formatter));
+        form.setNewDevice(Integer.parseInt(deviceTextField.getText()));
+        service.acceptChangeInfor(form);
         return;// Xử lý sự kiện khi nhấn nút "Từ chối"
     }
 
     @FXML
-    private void handleAcceptButton() {
-        return;// Xử lý sự kiện khi nhấn nút "Đồng ý"
+    private void handleRejectButton() {
+        service.rejectChangeInfor(form.getIdform());
     }
 }

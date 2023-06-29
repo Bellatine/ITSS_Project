@@ -18,6 +18,8 @@
                         <TableColumn fx:id="idnv" prefWidth="50.0" text="Nhân viên" />
                         <TableColumn fx:id="oldT" prefWidth="50.0" text="Thời gian cũ" />
                         <TableColumn fx:id="newT" prefWidth="50.0" text="Thời gian mới" />
+                        <TableColumn fx:id="oldD" prefWidth="50.0" text="Thiết bị cũ" />
+                        <TableColumn fx:id="newD" prefWidth="50.0" text="Thiết bị mới" />
                         <TableColumn fx:id="updateButton" minWidth="0.0" prefWidth="0.0" />
                     </columns>
                     <columnResizePolicy>

@@ -18,7 +18,8 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             "WHERE EXTRACT(DAY FROM timestamp) = ? " +
             "and EXTRACT(MONTH FROM timestamp) = ?"+
             "and EXTRACT(YEAR FROM timestamp) = ?" +
-            "and id_employee=?";
+            "and id_employee=?" +
+            "ORDER BY EXTRACT(DAY FROM timestamp)";
     private static final String q2 = "SELECT id_employee,timestamp,device FROM logcc " +
             "WHERE EXTRACT(MONTH FROM timestamp) = ? " +
             "and EXTRACT(YEAR FROM timestamp) = ?" +

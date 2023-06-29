@@ -22,26 +22,12 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
-        <Text layoutX="75.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên  :">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text fx:id="username" layoutX="140.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text layoutX="75.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày :">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
-        <Text fx:id="date" layoutX="140.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Text>
+        <Text layoutX="75.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên  :"/>
+        <Text fx:id="username" layoutX="140.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+        <Text layoutX="75.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID   :"/>
+        <Text fx:id="id_Employee" layoutX="140.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+        <Text layoutX="75.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày :"/>
+        <Text fx:id="date" layoutX="140.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
         <Button layoutX="649.0" layoutY="8.0" mnemonicParsing="false" fx:id="backBtn"
                 onAction="#backToPreviousPage" prefHeight="26.0" prefWidth="86.0" text="Back" />
     </children>

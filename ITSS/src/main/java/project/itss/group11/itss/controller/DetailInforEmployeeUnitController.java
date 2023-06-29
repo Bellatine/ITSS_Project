@@ -34,6 +34,9 @@ public class DetailInforEmployeeUnitController extends WorkspaceController{
     private Text username;
 
     @FXML
+    private Text id_Employee;
+
+    @FXML
     private TableColumn<TimekeepingDetail, String> comeLate;
 
     @FXML
@@ -66,6 +69,7 @@ public class DetailInforEmployeeUnitController extends WorkspaceController{
 
 
         username.setText(loginService.getUserInfor(SearchInfEmployeeUnitController.employeeID).getName());
+        id_Employee.setText(String.valueOf(SearchInfEmployeeUnitController.employeeID));
         date.setText(LocalDate.now().toString());
         //Constant.pool = ConnectionPool.getInstance("etc/database.config");
         date.setText(OverViewInforEmployeeUnitController.localDate.toString());

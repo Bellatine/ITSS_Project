@@ -24,8 +24,11 @@ public class DetailInforEmployeeUnitServiceImpl implements DetailInforEmployeeUn
         boolean isReturningEarly = returningTime.getHour()*3600 + returningTime.getMinute()*60 + returningTime.getSecond()
                 < endTime.getHour()*3600 + endTime.getMinute()*60 + endTime.getSecond();
         if(isReturningEarly) {
-            int total = endTime.getHour() * 3600 + endTime.getMinute() * 60  - returningTime.getHour() * 3600 + returningTime.getMinute() * 60;
-            return (int)total/3600 + ":" + (total- 3600*(int)total/3600)/60;
+            int total = endTime.getHour() * 3600 + endTime.getMinute() * 60  - returningTime.getHour() * 3600 - returningTime.getMinute() * 60;
+            int hour = total/3600;
+            int minute = (total - hour*3600)/60;
+            return hour +":"+ minute;
+
         }
         else
             return "No";
@@ -36,8 +39,10 @@ public class DetailInforEmployeeUnitServiceImpl implements DetailInforEmployeeUn
                 > startTime.getHour()*3600 + startTime.getMinute()*60 + startTime.getSecond();
         if(isComeLate)
         {
-            int total = comingTime.getHour() * 3600 + comingTime.getMinute() * 60 - comingTime.getHour() * 3600 + comingTime.getMinute() * 60;
-            return (int)total/3600 + ":" + (total- 3600*(int)total/3600)/60;
+            int total = comingTime.getHour() * 3600 + comingTime.getMinute() * 60 - startTime.getHour() * 3600 - startTime.getMinute() * 60;
+            int hour = total/3600;
+            int minute = (total - hour*3600)/60;
+            return hour +":"+ minute;
         }
         else
             return "No";
@@ -62,7 +67,7 @@ public class DetailInforEmployeeUnitServiceImpl implements DetailInforEmployeeUn
             t1.setReturnEarly("-");
             int machine = logInfors.get(0).getDevice();
             t1.setMachine(machine);
-            if(machine==1)
+            if(machine==0)
                 t1.setType("Check in");
             else
                 t1.setType("Check out");
@@ -77,7 +82,7 @@ public class DetailInforEmployeeUnitServiceImpl implements DetailInforEmployeeUn
             t2.setComeLate("-");
             int machine = logInfors.get(1).getDevice();
             t2.setMachine(machine);
-            if(machine==1)
+            if(machine==0)
                 t2.setType("Check in");
             else
                 t2.setType("Check out");

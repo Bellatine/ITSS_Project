@@ -14,7 +14,7 @@
             xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.itss.group11.itss.controller.OverViewInforEmployeeUnitController">
     <children>
 
-        <TableView fx:id="tableView" layoutX="1.0" layoutY="127.0" prefHeight="505.0" prefWidth="752.0">
+        <TableView fx:id="tableView" layoutX="1.0" layoutY="137.0" prefHeight="505.0" prefWidth="752.0">
             <columns>
                 <TableColumn fx:id="day" prefWidth="74.55337524414062" text="Ngày" />
                 <TableColumn fx:id="start" prefWidth="48.446624755859375" text="Bắt đầu" />
@@ -35,25 +35,13 @@
                 <Button fx:id="filter" layoutX="231.0" layoutY="42.0" mnemonicParsing="false" onAction="#filterTimekeepingByMonth" prefHeight="26.0" prefWidth="127.0" text="Lọc" />
             </children>
         </Pane>
-        <Text layoutX="75.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên  :">
-            <font>
-                <Font size="12.0" />
-            </font>
-        </Text>
-        <Text fx:id="username" layoutX="140.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
-            <font>
-                <Font size="12.0" />
-            </font>
-        </Text>
-        <Text layoutX="75.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày :">
-            <font>
-                <Font size="12.0" />
-            </font>
-        </Text>
-        <Text fx:id="time" layoutX="140.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0">
-            <font>
-                <Font size="12.0" />
-            </font>
-        </Text>
+        <Text layoutX="75.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên  :"/>
+        <Text fx:id="username" layoutX="140.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+        <Text layoutX="75.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID :"/>
+        <Text fx:id="id_Employee" layoutX="140.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+        <Text layoutX="75.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày :"/>
+        <Text fx:id="time" layoutX="140.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+        <Button layoutX="649.0" layoutY="8.0" mnemonicParsing="false" fx:id="backBtn"
+                onAction="#backToPreviousPage" prefHeight="26.0" prefWidth="86.0" text="Back" />
     </children>
 </AnchorPane>

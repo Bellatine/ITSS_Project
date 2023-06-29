@@ -36,6 +36,9 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
     private Text time;
 
     @FXML
+    private Text id_Employee;
+
+    @FXML
     private TableColumn<?, ?> comeLate;
 
     @FXML
@@ -75,6 +78,7 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
         AnchorPane.setRightAnchor(tableView, 10.0);
         AnchorPane.setBottomAnchor(tableView, 10.0);
         username.setText(loginService.getUserInfor(SearchInfEmployeeUnitController.employeeID).getName());
+        id_Employee.setText(String.valueOf(SearchInfEmployeeUnitController.employeeID));
         time.setText(LocalDate.now().toString());
         day.setCellValueFactory(new PropertyValueFactory<>("day"));
         start.setCellValueFactory(new PropertyValueFactory<>("start"));
@@ -145,5 +149,12 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
     public void setMainWorkspaceAnchorPane(AnchorPane mainWorkspaceAnchorPane) {
         this.mainWorkspaceAnchorPane = mainWorkspaceAnchorPane;
     }
-
+    @FXML
+    void backToPreviousPage(ActionEvent event) {
+        try {
+            changeWorkspace("/project/itss/group11/itss/view/manager/ViewEmployeeUnit.fxml");
+        }catch (Exception e) {
+            logger.error("Error in BacktoPreviousPage");
+        }
+    }
 }

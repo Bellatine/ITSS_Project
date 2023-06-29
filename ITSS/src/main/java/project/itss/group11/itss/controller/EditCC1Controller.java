@@ -19,11 +19,12 @@ import project.itss.group11.itss.model.Form;
 import project.itss.group11.itss.model.TimekeepingOverview;
 import project.itss.group11.itss.service.IFormOverviewService;
 import project.itss.group11.itss.service.Impl.FormOverviewServiceImpl;
+import project.itss.group11.itss.controller.ChangeSceneControllers;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class EditCC1Controller {
+public class EditCC1Controller extends BaseController{
     public static Form form;
     IFormOverviewService formOverviewService =  new FormOverviewServiceImpl();
     ObservableList<Form> dataList = FXCollections.observableArrayList();
@@ -77,6 +78,7 @@ public class EditCC1Controller {
     }
 
     private void updateForm(Form form) {
+        changeScene("Update.fxml");
         System.out.println("Cập nhật biểu mẫu: " + form.getIdnv());
     }
 }

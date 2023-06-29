@@ -1,4 +1,3 @@
-/*
 package project.itss.group11.itss.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,8 +40,9 @@ public class UpdateController {
     private Button acceptButton;
 
     public void initialize() {
-        idLabel.setText(Integer.toString(form.getIdnv()));
-        oldTimestampLabel.setText(form.getOldT().toString());
+/*      idLabel.setText(Integer.toString(form.getIdnv()));
+        oldTimestampLabel.setText(form.getOldT().toString());*/
+        return;
     }
     @FXML
     private void handleRejectButton() {
@@ -53,4 +53,4 @@ public class UpdateController {
     private void handleAcceptButton() {
         return;// Xử lý sự kiện khi nhấn nút "Đồng ý"
     }
-}*/
+}

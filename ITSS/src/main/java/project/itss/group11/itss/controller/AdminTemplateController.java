@@ -31,10 +31,6 @@ public class AdminTemplateController extends BaseController implements Initializ
     @FXML
     private Employee user;
 
-    @FXML
-    void selectRequestingToEditTimekeepingScreen(ActionEvent event) {
-
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

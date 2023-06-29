@@ -1,13 +1,16 @@
 package project.itss.group11.itss.controller;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -58,12 +61,13 @@ public class LoginController extends BaseController implements Initializable{
 
 
     @FXML
-    public void handleLogin() throws IOException {
+    public void handleLogin(Event event) throws IOException {
 
         String username = usernameField.getText();
         String password = passwordField.getText();
 
         logger.info("Start login user: " + username + " , pass: " + password);
+
         try {
             if (loginService.checkLogin(username, password)) {
                 logger.info("Login Success");

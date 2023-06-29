@@ -11,10 +11,15 @@ create table users(
 CREATE TABLE form (
     idform integer NOT NULL primary key,
     idnhanvien integer NOT NULL,
-    status boolean NOT NULL,
+    status int NOT NULL,
     newtime timestamp with time zone NOT NULL,
-	idlog int NOT NULL
+	idlog int NOT NULL,
+	newdevice integer NOT NULL
 );
+
+insert into form values(1,20204939,0,(TO_TIMESTAMP('2023-06-01 07:34:56', 'YYYY-MM-DD HH24:MI:SS'),1,1);
+insert into form values(2,20204939,0,(TO_TIMESTAMP('2022-06-01 07:34:56', 'YYYY-MM-DD HH24:MI:SS'),2,1);
+
 CREATE TABLE logCC (
     "id" SERIAL NOT NULL PRIMARY KEY,
     "timestamp" timestamp without time zone NOT NULL,

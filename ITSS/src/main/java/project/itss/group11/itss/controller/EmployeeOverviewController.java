@@ -59,11 +59,17 @@ public class EmployeeOverviewController extends WorkspaceController {
 
     @FXML
     private TableColumn<TimekeepingOverview, Button> viewingDetailButton;
+    @FXML
+    private AnchorPane anchorPane;
 
     public void initialize()
     {   // Mở connect
         //Constant.pool = ConnectionPool.getInstance("etc/database.config");
         // Liên kết các cột với thuộc tính tương ứng trong đối tượng TimekeepingOverview
+        AnchorPane.setTopAnchor(tableView, 100.0);
+        AnchorPane.setLeftAnchor(tableView, 10.0);
+        AnchorPane.setRightAnchor(tableView, 10.0);
+        AnchorPane.setBottomAnchor(tableView, 10.0);
         day.setCellValueFactory(new PropertyValueFactory<>("day"));
         start.setCellValueFactory(new PropertyValueFactory<>("start"));
         end.setCellValueFactory(new PropertyValueFactory<>("end"));

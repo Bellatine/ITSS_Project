@@ -36,7 +36,7 @@ public class DetailInforEmployeeUnitServiceImpl implements DetailInforEmployeeUn
                 > startTime.getHour()*3600 + startTime.getMinute()*60 + startTime.getSecond();
         if(isComeLate)
         {
-            int total = comingTime.getHour() * 3600 + comingTime.getMinute() * 60 - comingTime.getHour() * 3600 + comingTime.getMinute() * 60;
+            int total = comingTime.getHour() * 3600 + comingTime.getMinute() * 60 - startTime.getHour() * 3600 + startTime.getMinute() * 60;
             return (int)total/3600 + ":" + (total- 3600*(int)total/3600)/60;
         }
         else

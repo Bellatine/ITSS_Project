@@ -7,6 +7,7 @@ public class LogInfor {
     private int employee_id;
     private LocalDateTime timeStamp;
     private int device;
+    private int id;
 
     @Override
 	public int hashCode() {

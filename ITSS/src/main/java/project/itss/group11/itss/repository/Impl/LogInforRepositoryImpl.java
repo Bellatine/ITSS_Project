@@ -3,6 +3,7 @@ package project.itss.group11.itss.repository.Impl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import project.itss.group11.itss.Until.Constant;
+import project.itss.group11.itss.model.Form;
 import project.itss.group11.itss.model.LogInfor;
 import project.itss.group11.itss.repository.LogInforRepository;
 
@@ -23,7 +24,11 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             "WHERE EXTRACT(MONTH FROM timestamp) = ? " +
             "and EXTRACT(YEAR FROM timestamp) = ?" +
             "and id_employee=?";
+
     private static final String queryCheckDuplicate = "SELECT COUNT(*) FROM logcc WHERE timestamp = ? and id_employee = ? and device = ?";
+
+
+    private static final String queryUpdate = "update logcc set timestamp = ? , device = ?  where id = ?";
     @Override
     public List<LogInfor> getLogInforByDay(int day,int month,int year,int employee_id) {
 
@@ -124,7 +129,19 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             logger.error("Error in imoprtLogCC ", e);
         }
         return result;
+
+    public int updateInfor(Form form) {
+        try{
+            Connection connection = Constant.pool.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(queryUpdate);
+            pstmt.setTimestamp(1,Timestamp.valueOf(form.getNewT()));
+            pstmt.setInt(2,form.getNewDevice());
+            pstmt.setInt(3,form.getIdlog());
+            logger.info(form.getIdlog());
+            return  pstmt.executeUpdate();
+        }catch (Exception e){
+            logger.error("Error in updateInfor: ", e);
+        }
+        return 0;
     }
-
-
 }

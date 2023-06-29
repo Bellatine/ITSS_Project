@@ -12,8 +12,8 @@ CREATE TABLE form (
     idform integer NOT NULL primary key,
     idnhanvien integer NOT NULL,
     status boolean NOT NULL,
-    idlog integer NOT NULL,
-    newtime timestamp without time zone NOT NULL
+    newtime timestamp with time zone NOT NULL,
+	idlog int NOT NULL
 );
 CREATE TABLE logCC (
     "id" SERIAL NOT NULL PRIMARY KEY,

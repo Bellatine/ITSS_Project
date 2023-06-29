@@ -77,11 +77,15 @@ public class EmployeeOverviewController extends WorkspaceController {
         comeLate.setCellValueFactory(new PropertyValueFactory<>("comeLate"));
         // set default for selectingDateBtn
 
+
         date.setValue(EmployeeOverviewController.localDate);
         name.setText(Constant.employee.getName());
         userID.setText(Constant.employee.getID() + "");
 
 
+
+
+//        date.setValue(LocalDate.now());
 
 
 
@@ -95,9 +99,14 @@ public class EmployeeOverviewController extends WorkspaceController {
 
 
         // Đổ dữ liệu từ ObservableList vào TableView
+
         if (EmployeeOverviewController.localDate != null)
             timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
         tableView.setItems(timekeepingOverviews);
+
+//        timekeepingOverviews = employeeTimekeepingOverview.getTimekeepingByMonth(EmployeeOverviewController.localDate,startTime,endTime);
+//        tableView.setItems(timekeepingOverviews);
+
     }
     private Callback<TableColumn<TimekeepingOverview, Button>, TableCell<TimekeepingOverview, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass) {
         return column -> new TableCell<TimekeepingOverview, Button>() {
@@ -144,6 +153,9 @@ public class EmployeeOverviewController extends WorkspaceController {
         {
             EmployeeOverviewController.localDate = LocalDate.now();
             date.setValue(LocalDate.now());
+
+
+
 
         }
         else

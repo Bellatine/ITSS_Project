@@ -9,6 +9,7 @@ public class LogInfor {
     private LocalDateTime timeStamp;
     private int device;
 
+
     @Override
 	public int hashCode() {
 		return Objects.hash(device, employee_id, timeStamp);

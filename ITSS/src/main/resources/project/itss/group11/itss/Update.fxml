@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.itss.group11.itss.controller.UpdateController">
+    <children>
+        <fx:include source="AdminTemplate.fxml" />
+            <AnchorPane layoutX="246.0" layoutY="85.0" prefHeight="614.0" prefWidth="753.0">
+                <children>
+                    <Label layoutX="20.0" layoutY="20.0" text="ID Nhân viên:" />
+                    <Label fx:id="idLabel" layoutX="150.0" layoutY="20.0" />
+                    <Label layoutX="20.0" layoutY="50.0" text="Thời gian cũ:" />
+                    <Label fx:id="oldTimestampLabel" layoutX="150.0" layoutY="50.0" />
+                    <Label layoutX="20.0" layoutY="80.0" text="Thời gian mới:" />
+                    <Label fx:id="newTimestampLabel" layoutX="150.0" layoutY="80.0" />
+                    <Label layoutX="20.0" layoutY="110.0" text="Thiết bị cũ:" />
+                    <Label fx:id="oldDevice" layoutX="150.0" layoutY="110.0" />
+                    <Label layoutX="20.0" layoutY="140.0" text="Thiết bị mới:" />
+                    <Label fx:id="newDevice" layoutX="150.0" layoutY="140.0" />
+                    <TextField fx:id="timestampTextField" layoutX="20.0" layoutY="170.0" prefWidth="200.0" />
+                    <TextField fx:id="deviceTextField" layoutX="20.0" layoutY="200.0" prefWidth="200.0" />
+                    <Button layoutX="600.0" layoutY="560.0" text="Từ chối" onAction="#handleRejectButton" />
+                    <Button layoutX="680.0" layoutY="560.0" text="Đồng ý" onAction="#handleAcceptButton"/>
+                </children>
+            </AnchorPane>
+    </children>
+</AnchorPane>

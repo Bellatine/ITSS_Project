@@ -65,8 +65,15 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
     @FXML
     private TableColumn<TimekeepingOverview, Button> viewingDetailButton;
 
+    @FXML
+    private AnchorPane anchorPane;
+
     public void initialize()
     {
+        AnchorPane.setTopAnchor(tableView, 120.0);
+        AnchorPane.setLeftAnchor(tableView, 10.0);
+        AnchorPane.setRightAnchor(tableView, 10.0);
+        AnchorPane.setBottomAnchor(tableView, 10.0);
         username.setText(loginService.getUserInfor(SearchInfEmployeeUnitController.employeeID).getName());
         time.setText(LocalDate.now().toString());
         day.setCellValueFactory(new PropertyValueFactory<>("day"));

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
 import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.Employee;
@@ -44,11 +45,17 @@ public class SearchInfEmployeeUnitController extends WorkspaceController impleme
     private TableColumn<Employee, Button> view;
 
     ObservableList<Employee> employeeObservableList = FXCollections.observableArrayList();
+    @FXML
+    private AnchorPane anchorPane;
 
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        AnchorPane.setTopAnchor(tableView, 120.0);
+        AnchorPane.setLeftAnchor(tableView, 10.0);
+        AnchorPane.setRightAnchor(tableView, 10.0);
+        AnchorPane.setBottomAnchor(tableView, 10.0);
         id.setCellValueFactory(new PropertyValueFactory<>("ID"));
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         view.setCellFactory(createButtonCellFactory("View", "view-button"));

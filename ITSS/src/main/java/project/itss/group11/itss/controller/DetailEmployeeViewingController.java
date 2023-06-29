@@ -4,9 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
@@ -46,9 +48,22 @@ public class DetailEmployeeViewingController extends WorkspaceController{
 
     @FXML
     private TableView<TimekeepingDetail> tableview;
+
+    @FXML
+    private Button backBtn;
+
+    @FXML
+    private AnchorPane anchorPane;
     public void initialize(){
 
         //Constant.pool = ConnectionPool.getInstance("etc/database.config");
+        AnchorPane.setTopAnchor(tableview, 100.0);
+        AnchorPane.setLeftAnchor(tableview, 10.0);
+        AnchorPane.setRightAnchor(tableview, 10.0);
+        AnchorPane.setBottomAnchor(tableview, 10.0);
+
+        AnchorPane.setRightAnchor(backBtn, 10.0);
+
         time.setCellValueFactory(new PropertyValueFactory<>("time"));
         machine.setCellValueFactory(new PropertyValueFactory<>("machine"));
         type.setCellValueFactory(new PropertyValueFactory<>("type"));

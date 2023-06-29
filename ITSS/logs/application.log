@@ -1,0 +1,37 @@
+2023-06-29 21:40:26.625 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 21:40:26.627 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 21:40:26.692 [JavaFX Application Thread] ERROR project.itss.group11.itss.Until.ConnectionPool - Error when create Connection: 
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.Driver.makeConnection(Driver.java:465) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.Driver.connect(Driver.java:264) ~[postgresql-42.2.23.jar:42.2.23]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:229) ~[java.sql:?]
+	at project.itss.group11.itss.Until.ConnectionPool.initializePool(ConnectionPool.java:65) ~[classes/:?]
+	at project.itss.group11.itss.Until.ConnectionPool.<init>(ConnectionPool.java:34) ~[classes/:?]
+	at project.itss.group11.itss.Until.ConnectionPool.getInstance(ConnectionPool.java:40) ~[classes/:?]
+	at project.itss.group11.itss.controller.LoginController.initialize(LoginController.java:51) ~[classes/:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2655) ~[javafx-fxml-17.0.2-mac-aarch64.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-17.0.2-mac-aarch64.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-17.0.2-mac-aarch64.jar:?]
+	at project.itss.group11.itss.HelloApplication.start(HelloApplication.java:20) ~[classes/:?]
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847) ~[javafx-graphics-17.0.2-mac-aarch64.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484) ~[javafx-graphics-17.0.2-mac-aarch64.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457) ~[javafx-graphics-17.0.2-mac-aarch64.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456) ~[javafx-graphics-17.0.2-mac-aarch64.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) [javafx-graphics-17.0.2-mac-aarch64.jar:?]
+2023-06-29 21:40:40.782 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20203333 , pass: 3
+2023-06-29 21:40:51.406 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 21:40:51.407 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 21:40:59.482 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20203333 , pass: 3
+2023-06-29 21:40:59.546 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 21:43:56.599 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 21:44:02.851 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 2
+2023-06-29 21:55:51.017 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 2
+2023-06-29 21:55:55.688 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 0
+2023-06-29 21:56:01.572 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 1

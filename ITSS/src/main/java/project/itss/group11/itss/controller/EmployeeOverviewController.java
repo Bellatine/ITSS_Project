@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.util.Callback;
 import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
@@ -25,6 +26,10 @@ public class EmployeeOverviewController extends WorkspaceController {
     LocalDateTime startTime = LocalDateTime.of(2023, 1, 1, 8, 00, 0);
     LocalDateTime endTime = LocalDateTime.of(2023, 1, 1, 17, 30, 0);
 
+    @FXML
+    private Text userID;
+    @FXML
+    private Text name;
     @FXML
     private TableColumn<?, ?> comeLate;
 
@@ -67,6 +72,8 @@ public class EmployeeOverviewController extends WorkspaceController {
         // set default for selectingDateBtn
 
         date.setValue(EmployeeOverviewController.localDate);
+        name.setText(Constant.employee.getName());
+        userID.setText(Constant.employee.getID() + "");
 
 
 

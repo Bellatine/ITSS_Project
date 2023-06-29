@@ -49,12 +49,16 @@ public class DetailEmployeeViewingController extends WorkspaceController{
     public void initialize(){
 
         //Constant.pool = ConnectionPool.getInstance("etc/database.config");
-        date.setText(EmployeeOverviewController.localDate.toString());
         time.setCellValueFactory(new PropertyValueFactory<>("time"));
         machine.setCellValueFactory(new PropertyValueFactory<>("machine"));
         type.setCellValueFactory(new PropertyValueFactory<>("type"));
         returnEarly.setCellValueFactory(new PropertyValueFactory<>("returnEarly"));
         comeLate.setCellValueFactory(new PropertyValueFactory<>("comeLate"));
+        username.setText(username.getText());
+        date.setText(EmployeeOverviewController.localDate.getDayOfMonth() + "/"
+        + EmployeeOverviewController.localDate.getMonth().getValue() + "/" +
+                        EmployeeOverviewController.localDate.getYear()
+        );
 
         timekeepingDetails = employeeDetailTimekeeping.getDetailTimekeepingByDay(EmployeeOverviewController.localDate,startTime,endTime);
         tableview.setItems(timekeepingDetails);

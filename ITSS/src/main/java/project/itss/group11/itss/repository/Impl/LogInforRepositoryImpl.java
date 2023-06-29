@@ -23,6 +23,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             "WHERE EXTRACT(MONTH FROM timestamp) = ? " +
             "and EXTRACT(YEAR FROM timestamp) = ?" +
             "and id_employee=?";
+    private static final String queryCheckDuplicate = "SELECT COUNT(*) FROM logcc WHERE timestamp = ? and idEmployee = ? and device = ?";
     @Override
     public List<LogInfor> getLogInforByDay(int day,int month,int year,int employee_id) {
 
@@ -48,6 +49,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             stmt.close();
             Constant.pool.releaseConnection(connection);
         }catch (SQLException ex) {
+            logger.error("Error when getLogInforByDay: ", ex);
             throw new RuntimeException(ex);
         }
         return logInfors;
@@ -75,9 +77,54 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             rs.close();
             stmt.close();
             Constant.pool.releaseConnection(connection);
-        }catch (SQLException ex) {
+        }catch (Exception ex) {
+            logger.error("Error when getLogInforByMonth: ", ex);
             throw new RuntimeException(ex);
         }
+        logger.info("getLogByMonth: " + logInfors.size());
         return logInfors;
     }
+
+    @Override
+    public boolean checkDuplicate(LogInfor logInfor) {
+        boolean result = false;
+        try{
+            Connection connection = Constant.pool.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(queryCheckDuplicate);
+            pstmt.setTimestamp(1,Timestamp.valueOf(logInfor.getTimeStamp()));
+            pstmt.setInt(2,logInfor.getEmployeeID());
+            pstmt.setInt(3,logInfor.getDevice());
+            ResultSet resultSet = pstmt.executeQuery();
+            while (resultSet.next()){
+                if(resultSet.getInt(1)==1)
+                    return true;
+            }
+        }catch (Exception e){
+            logger.error("Error in checkDuplicate: ", e);
+        }
+        return false;
+    }
+
+    @Override
+    public int[] importLogCC(List<LogInfor> logInfors) {
+        int[] result = new int[0];
+        try{
+            Connection connection = Constant.pool.getConnection();
+            Statement stmt = connection.createStatement();
+            for(LogInfor logInfor : logInfors){
+                String sqlQuery = "INSERT INTO logcc VALUES('" + logInfor.getId() +
+                             "','" + logInfor.getTimeStamp() +
+                             "','" + logInfor.getEmployeeID() +
+                             "','" + logInfor.getDevice() +
+                             "')";
+                stmt.addBatch(sqlQuery);
+            }
+            result = stmt.executeBatch();
+        }catch (Exception e){
+            logger.error("Error in imoprtLogCC ", e);
+        }
+        return result;
+    }
+
+
 }

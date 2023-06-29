@@ -8,17 +8,22 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
-import project.itss.group11.itss.Until.ConnectionPool;
-import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.TimekeepingDetail;
+import project.itss.group11.itss.service.DetailInforEmployeeUnitService;
 import project.itss.group11.itss.service.IEmployeeDetailTimekeeping;
+import project.itss.group11.itss.service.Impl.DetailInforEmployeeUnitServiceImpl;
 import project.itss.group11.itss.service.Impl.EmployeeDetailTimekeeping;
+import project.itss.group11.itss.service.Impl.LoginServiceImpl;
+import project.itss.group11.itss.service.LoginService;
 
+import java.awt.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class DetailEmployeeViewingController extends WorkspaceController{
+public class DetailInforEmployeeUnitController extends WorkspaceController{
 
-    private IEmployeeDetailTimekeeping employeeDetailTimekeeping = new EmployeeDetailTimekeeping();
+    private static final DetailInforEmployeeUnitService service = new DetailInforEmployeeUnitServiceImpl();
+    private static final LoginService loginService = new LoginServiceImpl();
     ObservableList<TimekeepingDetail> timekeepingDetails = FXCollections.observableArrayList();
     LocalDateTime startTime = LocalDateTime.of(2023, 1, 1, 8, 00, 0);
     LocalDateTime endTime = LocalDateTime.of(2023, 1, 1, 17, 30, 0);
@@ -47,34 +52,29 @@ public class DetailEmployeeViewingController extends WorkspaceController{
     @FXML
     private TableView<TimekeepingDetail> tableview;
     public void initialize(){
-
+        username.setText(loginService.getUserInfor(SearchInfEmployeeUnitController.employeeID).getName());
+        date.setText(LocalDate.now().toString());
         //Constant.pool = ConnectionPool.getInstance("etc/database.config");
+        date.setText(OverViewInforEmployeeUnitController.localDate.toString());
         time.setCellValueFactory(new PropertyValueFactory<>("time"));
         machine.setCellValueFactory(new PropertyValueFactory<>("machine"));
         type.setCellValueFactory(new PropertyValueFactory<>("type"));
         returnEarly.setCellValueFactory(new PropertyValueFactory<>("returnEarly"));
         comeLate.setCellValueFactory(new PropertyValueFactory<>("comeLate"));
-        username.setText(username.getText());
-        date.setText(EmployeeOverviewController.localDate.getDayOfMonth() + "/"
-        + EmployeeOverviewController.localDate.getMonth().getValue() + "/" +
-                        EmployeeOverviewController.localDate.getYear()
-        );
 
-        timekeepingDetails = employeeDetailTimekeeping.getDetailTimekeepingByDay(EmployeeOverviewController.localDate,startTime,endTime);
+        timekeepingDetails = service.getDetailTimekeepingByDay(OverViewInforEmployeeUnitController.localDate,startTime,endTime,SearchInfEmployeeUnitController.employeeID);
         tableview.setItems(timekeepingDetails);
 
 
     }
     @FXML
-    void backToPrvPage(ActionEvent event) {
+    void backToPreviousPage(ActionEvent event) {
         try {
-            changeWorkspace("/project/itss/group11/itss/view/XemTQNV.fxml");
+            changeWorkspace("/project/itss/group11/itss/view/manager/OverViewEmployeeUnit.fxml");
         }catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error at backToPrvPage function at XemChiTietNhanVienController");
+            logger.error("Error in BacktoPreviousPage");
         }
     }
-
 
 
 

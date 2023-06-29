@@ -14,6 +14,15 @@ public class Employee {
         this.ID = ID;
     }
 
+    public Employee(int ID, String name, LocalDate birthDate, int unit, int role, int gender) {
+        this.ID = ID;
+        this.name = name;
+        this.role = role;
+        Unit = unit;
+        this.birthDate = birthDate;
+        this.gender = gender;
+    }
+
     public int getID() {
         return ID;
     }

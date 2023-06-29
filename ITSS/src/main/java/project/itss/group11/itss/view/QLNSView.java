@@ -53,7 +53,7 @@ public class QLNSView extends TemplateView{
 		try {
 			root = rootFxmlLoader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error in init: ",e);
 		}
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("template.css").toExternalForm());

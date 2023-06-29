@@ -459,3 +459,9 @@ Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violate
 2023-06-29 23:54:19.896 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
 2023-06-29 23:58:45.740 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
 2023-06-29 23:58:45.742 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 00:03:08.048 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 00:03:08.052 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 00:03:13.981 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 00:03:13.998 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 00:19:27.773 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-30 00:19:27.775 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

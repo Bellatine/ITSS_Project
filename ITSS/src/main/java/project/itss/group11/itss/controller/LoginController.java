@@ -3,13 +3,14 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -62,7 +63,7 @@ public class LoginController extends BaseController implements Initializable{
 
     @FXML
     public void handleLogin(Event event) throws IOException {
-
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -74,13 +75,13 @@ public class LoginController extends BaseController implements Initializable{
                 Constant.employee = loginService.getUserInfor(Integer.parseInt(username));
                 if (Constant.employee.getRole() == 3) {
                     //changeScene("staff/UserTemplate.fxml");
-                    EmployeeView employeeView = new EmployeeView(HelloApplication.MAIN_STAGE);
+                    EmployeeView employeeView = new EmployeeView(stage);
                     employeeView.show();
                 } else if (Constant.employee.getRole() == 1) {
-                    QLNSView qlnsView = new QLNSView(HelloApplication.MAIN_STAGE);
+                    QLNSView qlnsView = new QLNSView(stage);
                     qlnsView.show();
                 } else if (Constant.employee.getRole() == 2) {
-                    ManagerView managerView = new ManagerView(HelloApplication.MAIN_STAGE);
+                    ManagerView managerView = new ManagerView(stage);
                     managerView.show();
                 }
             } else {

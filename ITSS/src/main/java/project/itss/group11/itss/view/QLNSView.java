@@ -67,6 +67,20 @@ public class QLNSView extends TemplateView{
 		importOptionButton.setOnMouseClicked(event -> {
 			addToWorkspace(new ImportFileChamCongView());
 		});
+		Button btn1 = createOptionButton("Thông tin chấm công của tôi");
+		Button btn2 = createOptionButton("Xem thông tin chấm công của nhân viên");
+		Button btn3 = createOptionButton("Xem yêu cầu chỉnh sửa chấm công");
+		btn3.setOnMouseClicked(event -> {
+			try {
+				addToWorkspace("EditCC1.fxml");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		addOptionButton(btn1);
+		addOptionButton(btn2);
+		addOptionButton(btn3);
 		addOptionButton(importOptionButton);
 	}
 	

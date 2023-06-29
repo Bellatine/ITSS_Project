@@ -59,10 +59,7 @@ public class ImportFileChamCongController{
 		importFileChamCongView.showTable(importFileChamCongModel.getTableRows(), importFileChamCongModel.getIsDuplicate());
 	}
 	
-	public Boolean handleImport(ArrayList<Boolean> writeToDBList) {
-		
-		
-		
-		return true;
+	public Boolean handleImport(ArrayList<Boolean> isSelected) {
+		return(importFileChamCongModel.importLogInforList(isSelected));
 	}
 }

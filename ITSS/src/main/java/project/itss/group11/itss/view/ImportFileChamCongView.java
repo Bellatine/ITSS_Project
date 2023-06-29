@@ -2,6 +2,7 @@ package project.itss.group11.itss.view;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -80,10 +81,20 @@ public class ImportFileChamCongView extends WorkspaceView{
 		TableColumn idColumn = table.getColumns().get(0);
 		TableColumn timeColumn = table.getColumns().get(1);
 		TableColumn deviceColumn = table.getColumns().get(2);
-		TableColumn selectColumn = table.getColumns().get(3);
+		TableColumn nameColumn = table.getColumns().get(3);
+		TableColumn roleColumn = table.getColumns().get(4);
+		TableColumn unitColumn = table.getColumns().get(5);
+		TableColumn birthdateColumn = table.getColumns().get(6);
+		TableColumn genderColumn = table.getColumns().get(7);
+		TableColumn selectColumn = table.getColumns().get(8);
 		idColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, Integer>("id"));
 		timeColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, LocalDateTime>("timestamp"));
 		deviceColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, Integer>("device"));
+		nameColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, String>("name"));
+		roleColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, String>("role"));
+		unitColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, String>("unit"));
+		birthdateColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, LocalDate>("gender"));
+		genderColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, String>("birtdate"));
 		selectColumn.setCellValueFactory(new PropertyValueFactory<PreviewFileChamCongTableRowModel, CheckBox>("selectCheckBox"));
 		
 		table.setItems(tableRows);
@@ -91,7 +102,7 @@ public class ImportFileChamCongView extends WorkspaceView{
 			if(isDuplicate.get(i)) {
 				CheckBox checkBox = table.getItems().get(i).getSelectCheckBox();
 				checkBox.setDisable(true);
-				checkBox.setText("Disable");
+				checkBox.setText("is duplicated");
 				
 			}
 		}
@@ -120,22 +131,38 @@ public class ImportFileChamCongView extends WorkspaceView{
 		// cai dat listener import button
 		Button importButton = (Button)(mainWorkspaceAnchorPane.lookup("#importButton"));
 		importButton.setOnMouseClicked(event -> {
-			ArrayList<Boolean> writeToDBList = new ArrayList<Boolean>();
+			ArrayList<Boolean> isSelected = new ArrayList<Boolean>();
 			for(int i=0; i< table.getItems().size(); i++) {
 				CheckBox checkBox = table.getItems().get(i).getSelectCheckBox();
 				if(checkBox.isSelected()) {
 					System.out.println(i);
-					writeToDBList.add(true);
+					isSelected.add(true);
 				}else
-					writeToDBList.add(false);
+					isSelected.add(false);
 			}
-			Boolean isSuccess = importFileChamCongController.handleImport(writeToDBList);
+			Boolean isSuccess = importFileChamCongController.handleImport(isSelected);
 			if(isSuccess) {
 				// Chuyen toi man hinh thong bao thanh cong
 				VBox vbox = new VBox();
 				vbox.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
 				vbox.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-				Label label = new Label("Successfully Imported!");
+				Label label = new Label("Successfully imported!");
+				vbox.getChildren().add(label);
+				vbox.setAlignment(Pos.CENTER);
+				AnchorPane.setTopAnchor(vbox, 0.0);
+				AnchorPane.setBottomAnchor(vbox, 0.0);
+				AnchorPane.setRightAnchor(vbox, 0.0);
+				AnchorPane.setLeftAnchor(vbox, 0.0);
+				mainWorkspaceAnchorPane.getChildren().clear();
+				mainWorkspaceAnchorPane.getChildren().add(vbox);
+				mainWorkspaceAnchorPane.applyCss();
+				mainWorkspaceAnchorPane.layout();
+			}else {
+				// Chuyen toi man hinh thong bao thanh cong
+				VBox vbox = new VBox();
+				vbox.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
+				vbox.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+				Label label = new Label("Failed to import!");
 				vbox.getChildren().add(label);
 				vbox.setAlignment(Pos.CENTER);
 				AnchorPane.setTopAnchor(vbox, 0.0);

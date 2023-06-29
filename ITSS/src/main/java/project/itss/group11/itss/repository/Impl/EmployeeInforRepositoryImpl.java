@@ -49,6 +49,9 @@ public class EmployeeInforRepositoryImpl implements EmployeeInforRepository {
             PreparedStatement stmt = connection.prepareStatement(getEmployeeInforQuery);
             stmt.setInt(1,id);
             ResultSet rs = stmt.executeQuery();
+            if (!rs.isBeforeFirst() ) {    
+                return null; 
+            } 
             while (rs.next()){
                 employee.setName(rs.getString(2));
                 employee.setBirthDate( rs.getDate(3).toLocalDate());

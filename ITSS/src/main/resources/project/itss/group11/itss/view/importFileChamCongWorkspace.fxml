@@ -32,6 +32,11 @@
                   <TableColumn fx:id="importFileChamCongIDColumn" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="ID" />
                   <TableColumn fx:id="importFileChamCongTimestampColumn" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Timestamp" />
                   <TableColumn fx:id="importFileChamCongDeviceColumn" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Device" />
+                  <TableColumn fx:id="importFileChamCongIDColumn1" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Name" />
+                  <TableColumn fx:id="importFileChamCongIDColumn2" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Role" />
+                  <TableColumn fx:id="importFileChamCongIDColumn11" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Unit" />
+                  <TableColumn fx:id="importFileChamCongIDColumn12" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Birtdate" />
+                  <TableColumn fx:id="importFileChamCongIDColumn13" editable="false" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Gender" />
                   <TableColumn fx:id="importFileChamCongSelectColumn" maxWidth="9999.0" minWidth="-1.0" prefWidth="-1.0" style="-fx-alignment: center;" text="Select" />
                </columns>
                <columnResizePolicy>

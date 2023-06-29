@@ -23,7 +23,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             "WHERE EXTRACT(MONTH FROM timestamp) = ? " +
             "and EXTRACT(YEAR FROM timestamp) = ?" +
             "and id_employee=?";
-    private static final String queryCheckDuplicate = "SELECT COUNT(*) FROM logcc WHERE timestamp = ? and idEmployee = ? and device = ?";
+    private static final String queryCheckDuplicate = "SELECT COUNT(*) FROM logcc WHERE timestamp = ? and id_employee = ? and device = ?";
     @Override
     public List<LogInfor> getLogInforByDay(int day,int month,int year,int employee_id) {
 

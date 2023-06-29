@@ -3,12 +3,9 @@ import org.junit.Test;
 
 import project.itss.group11.itss.service.IEmployeeTimekeepingOverview;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
-import static org.junit.Assert.*;
-public class EmployeeTimekeepingOverviewImpl {
+public class EmployeeTimekeepingOverviewTest {
     IEmployeeTimekeepingOverview employeeTimekeepingOverview = new project.itss.group11.itss.service.Impl.EmployeeTimekeepingOverviewImpl();
 
     LocalDateTime startTime = LocalDateTime.of(2023, 1, 1, 8, 00, 0);

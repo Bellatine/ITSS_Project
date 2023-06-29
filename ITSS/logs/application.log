@@ -442,3 +442,20 @@ Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violate
 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2284) ~[postgresql-42.2.23.jar:42.2.23]
 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:520) ~[postgresql-42.2.23.jar:42.2.23]
 	... 36 more
+2023-06-29 19:38:55.995 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 19:38:56.008 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 19:39:01.840 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-29 19:39:01.867 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 19:40:50.216 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-29 19:40:50.217 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 19:41:00.025 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 60
+2023-06-29 19:41:31.410 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 60
+2023-06-29 19:41:43.745 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - getLogByMonth: 60
+2023-06-29 23:51:58.459 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 23:51:58.467 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 23:54:11.655 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 23:54:11.664 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 23:54:19.860 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-29 23:54:19.896 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 23:58:45.740 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-29 23:58:45.742 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

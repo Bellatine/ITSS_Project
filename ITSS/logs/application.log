@@ -583,3 +583,47 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 2023-06-29 13:01:15.988 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
 2023-06-29 13:01:24.430 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
 2023-06-29 13:01:24.457 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 13:09:00.170 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 13:09:00.173 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 13:09:07.381 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 13:09:07.433 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 13:21:36.091 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 13:21:36.094 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 13:21:41.842 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 13:21:41.889 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 13:26:14.810 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 13:26:14.815 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 13:26:20.720 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 13:26:20.759 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 13:40:52.408 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 13:40:52.413 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 13:41:00.354 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 13:41:00.391 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 13:58:56.276 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 13:58:56.280 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 13:59:02.108 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 13:59:02.146 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 14:00:34.683 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 14:00:34.687 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 14:00:40.788 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 14:00:40.822 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 14:29:48.792 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 14:29:48.796 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 15:27:42.461 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 15:27:42.465 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 15:27:50.915 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-29 15:27:50.949 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 15:28:20.713 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-29 15:28:20.714 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 15:29:49.735 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 15:29:49.739 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 15:29:56.161 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 15:29:56.172 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 17:00:05.031 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 17:00:05.034 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 17:00:10.457 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20204939 , pass: 11
+2023-06-29 17:00:10.498 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 20:42:16.369 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 20:42:16.376 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 20:42:22.784 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-29 20:42:22.906 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

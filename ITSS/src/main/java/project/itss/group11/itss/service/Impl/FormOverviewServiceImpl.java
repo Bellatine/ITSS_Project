@@ -22,7 +22,7 @@ public class FormOverviewServiceImpl implements IFormOverviewService {
         for(FormDatabase formDatabase : formDatabases){
             form.setIdnv(formDatabase.getIdnhanvien());
             form.setNewT(formDatabase.getNewtime());
-            form.setOldT(formDatabase.getNewtime());
+            form.setOldT(formDatabase.getOldtime());
             forms.add(form);
         }
         return forms;

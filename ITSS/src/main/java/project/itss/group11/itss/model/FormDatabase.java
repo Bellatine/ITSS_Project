@@ -3,6 +3,15 @@ import java.time.LocalDateTime;
 public class FormDatabase {
     private int idlog;
     private int idnhanvien;
+    private LocalDateTime oldtime;
+
+    public LocalDateTime getOldtime() {
+        return oldtime;
+    }
+
+    public void setOldtime(LocalDateTime oldtime) {
+        this.oldtime = oldtime;
+    }
 
     public int getIdlog() {
         return idlog;

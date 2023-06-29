@@ -6,6 +6,16 @@ public class Form {
     private int idnv;
     private LocalDateTime oldT;
     private LocalDateTime newT;
+    private int idlog;
+
+    public int getIdlog() {
+        return idlog;
+    }
+
+    public void setIdlog(int idlog) {
+        this.idlog = idlog;
+    }
+
     public Form() {
     }
 

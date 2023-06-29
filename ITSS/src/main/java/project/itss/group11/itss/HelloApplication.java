@@ -21,7 +21,6 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-
         MAIN_STAGE = stage;
 		MAIN_STAGE.setOnCloseRequest(ev -> {
             for (var secondaryStage : secondaryStages) {

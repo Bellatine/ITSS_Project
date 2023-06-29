@@ -25,7 +25,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class EditCC1Controller extends BaseController{
-    public static Form form;
+    public Form form1;
     IFormOverviewService formOverviewService =  new FormOverviewServiceImpl();
     ObservableList<Form> dataList = FXCollections.observableArrayList();
 
@@ -58,9 +58,11 @@ public class EditCC1Controller extends BaseController{
             {
                 button.getStyleClass().add(buttonStyleClass);
                 button.setOnAction(event -> {
-                    form = getTableRow().getItem();
-                    if (form != null) {
-                        updateForm(form);
+                    form1 = getTableRow().getItem();
+                    if (form1 != null) {
+                        UpdateController.setForm(form1);
+                        changeScene("Update.fxml");
+                        System.out.println("Cập nhật biểu mẫu: " + form1.getIdnv());
                     }
                 });
             }
@@ -77,8 +79,4 @@ public class EditCC1Controller extends BaseController{
         };
     }
 
-    private void updateForm(Form form) {
-        changeScene("Update.fxml");
-        System.out.println("Cập nhật biểu mẫu: " + form.getIdnv());
-    }
 }

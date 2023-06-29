@@ -15,6 +15,7 @@ import project.itss.group11.itss.HelloApplication;
 import project.itss.group11.itss.Until.ConnectionPool;
 import project.itss.group11.itss.Until.Constant;
 import project.itss.group11.itss.model.Employee;
+import project.itss.group11.itss.model.Form;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,10 +40,15 @@ public class UpdateController {
     @FXML
     private Button acceptButton;
 
+    private static Form form;
+
     public void initialize() {
-/*      idLabel.setText(Integer.toString(form.getIdnv()));
-        oldTimestampLabel.setText(form.getOldT().toString());*/
+        idLabel.setText(Integer.toString(form.getIdnv()));
+        oldTimestampLabel.setText(form.getOldT().toString());
         return;
+    }
+    public static void setForm(Form form){
+        UpdateController.form = form;
     }
     @FXML
     private void handleRejectButton() {

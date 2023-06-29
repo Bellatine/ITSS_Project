@@ -33,6 +33,8 @@ public class FormDataRepositoryImpl implements FormDataRepository {
                 FormDatabase formDatabase = new FormDatabase();
                 formDatabase.setIdnhanvien(rs.getInt("idnhanvien"));
                 formDatabase.setNewtime(rs.getTimestamp("newtime").toLocalDateTime());
+                formDatabase.setIdlog(rs.getInt("idlog"));
+                formDatabase.setOldtime(rs.getTimestamp("timestamp").toLocalDateTime());
                 formDatabases.add(formDatabase);
             }
             rs.close();

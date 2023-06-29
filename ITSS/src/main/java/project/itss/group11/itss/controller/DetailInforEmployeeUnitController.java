@@ -4,9 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import project.itss.group11.itss.model.TimekeepingDetail;
 import project.itss.group11.itss.service.DetailInforEmployeeUnitService;
@@ -51,7 +53,18 @@ public class DetailInforEmployeeUnitController extends WorkspaceController{
 
     @FXML
     private TableView<TimekeepingDetail> tableview;
+    @FXML
+    private AnchorPane anchorPane;
+    @FXML
+    private Button backBtn;
     public void initialize(){
+        AnchorPane.setTopAnchor(tableview, 100.0);
+        AnchorPane.setLeftAnchor(tableview, 10.0);
+        AnchorPane.setRightAnchor(tableview, 10.0);
+        AnchorPane.setBottomAnchor(tableview, 10.0);
+        AnchorPane.setRightAnchor(backBtn, 10.0);
+
+
         username.setText(loginService.getUserInfor(SearchInfEmployeeUnitController.employeeID).getName());
         date.setText(LocalDate.now().toString());
         //Constant.pool = ConnectionPool.getInstance("etc/database.config");

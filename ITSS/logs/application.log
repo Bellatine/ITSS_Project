@@ -785,3 +785,17 @@ org.postgresql.util.PSQLException: The column index is out of range: 6, number o
 2023-06-28 21:48:52.740 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Fail
 2023-06-28 21:48:56.908 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
 2023-06-28 21:48:56.908 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 15:33:56.630 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 15:33:56.634 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 15:34:22.116 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-29 15:34:22.154 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 15:38:11.801 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 15:38:11.805 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 15:38:21.260 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-29 15:38:21.275 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-29 15:39:02.144 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 15:39:02.148 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 15:39:10.257 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-29 15:39:10.267 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-29 15:39:15.196 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
+2023-06-29 15:39:15.211 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success

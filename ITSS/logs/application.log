@@ -12,3 +12,79 @@
 2023-06-30 03:29:57.472 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
 2023-06-30 03:30:06.007 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20201111 , pass: 1
 2023-06-30 03:30:06.022 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 07:58:35.830 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 07:58:35.845 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 07:58:36.040 [JavaFX Application Thread] ERROR project.itss.group11.itss.Until.ConnectionPool - Error when create Connection: 
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:613) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:161) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.Driver.makeConnection(Driver.java:465) ~[postgresql-42.2.23.jar:42.2.23]
+	at org.postgresql.Driver.connect(Driver.java:264) ~[postgresql-42.2.23.jar:42.2.23]
+	at java.sql.DriverManager.getConnection(DriverManager.java:681) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:229) ~[java.sql:?]
+	at project.itss.group11.itss.Until.ConnectionPool.initializePool(ConnectionPool.java:65) ~[classes/:?]
+	at project.itss.group11.itss.Until.ConnectionPool.<init>(ConnectionPool.java:34) ~[classes/:?]
+	at project.itss.group11.itss.Until.ConnectionPool.getInstance(ConnectionPool.java:40) ~[classes/:?]
+	at project.itss.group11.itss.controller.LoginController.initialize(LoginController.java:52) ~[classes/:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2655) ~[javafx-fxml-17.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2548) ~[javafx-fxml-17.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2516) ~[javafx-fxml-17.0.2-win.jar:?]
+	at project.itss.group11.itss.HelloApplication.start(HelloApplication.java:20) ~[classes/:?]
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847) ~[javafx-graphics-17.0.2-win.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484) ~[javafx-graphics-17.0.2-win.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457) ~[javafx-graphics-17.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456) ~[javafx-graphics-17.0.2-win.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96) ~[javafx-graphics-17.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-17.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184) ~[javafx-graphics-17.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2023-06-30 07:59:03.769 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 07:59:03.775 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 07:59:11.160 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-30 07:59:11.197 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 07:59:15.930 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 07:59:15.930 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:03:19.925 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 08:03:19.927 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 08:03:31.258 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-30 08:03:31.269 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 08:03:33.951 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 08:03:33.951 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:07:37.400 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 08:07:37.403 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 08:07:43.069 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-30 08:07:43.079 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 08:07:44.540 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 08:07:44.540 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:09:18.742 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 08:09:18.744 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 08:09:24.237 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-30 08:09:24.247 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 08:09:31.246 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 08:09:31.246 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:09:33.974 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 08:09:33.974 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:12:02.235 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 08:12:02.237 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 08:12:09.134 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-30 08:12:09.144 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 08:12:11.112 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 08:12:11.112 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:17:13.017 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 08:17:13.023 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 08:17:25.651 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-30 08:17:25.661 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 08:17:27.266 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 08:17:27.266 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:17:30.402 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 2
+2023-06-30 08:17:34.653 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:21:43.938 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Create pool
+2023-06-30 08:21:43.941 [JavaFX Application Thread] INFO  project.itss.group11.itss.Until.ConnectionPool - Load conf database OK
+2023-06-30 08:21:55.695 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Start login user: 20205105 , pass: man
+2023-06-30 08:21:55.707 [JavaFX Application Thread] INFO  project.itss.group11.itss.controller.LoginController - Login Success
+2023-06-30 08:21:56.973 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1
+2023-06-30 08:22:00.121 [JavaFX Application Thread] INFO  project.itss.group11.itss.repository.Impl.LogInforRepositoryImpl - 1

@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import java.io.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -69,9 +70,8 @@ public class EditCC1Controller extends WorkspaceController{
                     if (form1 != null) {
                         UpdateController.setForm(form1);
                         try {
-							changeWorkspace("Update.fxml");
+							changeWorkspace("/project/itss/group11/itss/view/Update.fxml");
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
                     }

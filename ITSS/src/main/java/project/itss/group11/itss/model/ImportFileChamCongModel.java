@@ -66,56 +66,65 @@ public class ImportFileChamCongModel {
 		}
 	}
 	
-	public void inputRows(List<String[]> rows) {
-		for(String[] row: rows) {
-//			System.out.println("Input a row");
-			
-			int id = Integer.parseInt(row[0]);
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-			LocalDateTime timeStamp = LocalDateTime.parse(row[1], formatter);
-			int device = Integer.parseInt(row[2]);
-			
-			LogInfor logInfor = new LogInfor();
-			logInfor.setEmployeeID(id);
-			logInfor.setTimeStamp(timeStamp);
-			logInfor.setDevice(device);
-			inputList.add(logInfor);
-			
-			// Lay thong tin tu he thong qlns
-			Employee employee = employeeInforRepository.getInforUser(id);
-			String name = null;
-			String role = null;
-			int unit = -1;
-			String gender = null;
-		    LocalDate birthDate = null;
-		    Boolean isValid = false;
-			if(employee != null) {
-				name = employee.getName();
+	public void setInputList(ArrayList<LogInfor> inputList) {
+		this.inputList = inputList;
+	}
+
+	public boolean inputRows(List<String[]> rows) {
+		try {
+			for(String[] row: rows) {
+	//			System.out.println("Input a row");
 				
-				switch(employee.getRole()) {
-				case 1:
-					role = "QLNS";	break;
-				case 2:
-					role = "Trưởng đơn vị";	break;
-				case 3:
-					role = "Nhân viên";	break;
+				int id = Integer.parseInt(row[0]);
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+				LocalDateTime timeStamp = LocalDateTime.parse(row[1], formatter);
+				int device = Integer.parseInt(row[2]);
+				
+				LogInfor logInfor = new LogInfor();
+				logInfor.setEmployeeID(id);
+				logInfor.setTimeStamp(timeStamp);
+				logInfor.setDevice(device);
+				inputList.add(logInfor);
+				
+				// Lay thong tin tu he thong qlns
+				Employee employee = employeeInforRepository.getInforUser(id);
+				String name = null;
+				String role = null;
+				int unit = -1;
+				String gender = null;
+			    LocalDate birthDate = null;
+			    Boolean isValid = false;
+				if(employee != null) {
+					name = employee.getName();
+					
+					switch(employee.getRole()) {
+					case 1:
+						role = "QLNS";	break;
+					case 2:
+						role = "Trưởng đơn vị";	break;
+					case 3:
+						role = "Nhân viên";	break;
+					}
+					
+					unit = employee.getUnit();
+					
+					if(employee.getGender()==0) 
+						gender = "Nữ";
+					else
+						gender = "Nam";
+					
+					birthDate = employee.getBirthDate();
+					
+					isValid = true;
 				}
-				
-				unit = employee.getUnit();
-				
-				if(employee.getGender()==0) 
-					gender = "Nữ";
-				else
-					gender = "Nam";
-				
-				birthDate = employee.getBirthDate();
-				
-				isValid = true;
+				PreviewFileChamCongTableRowModel tableRow = new PreviewFileChamCongTableRowModel(id, timeStamp, device, name, role, unit, birthDate, gender, isValid);
+				tableRows.add(tableRow);		
+	//			System.out.println("Inputed a row");
 			}
-			PreviewFileChamCongTableRowModel tableRow = new PreviewFileChamCongTableRowModel(id, timeStamp, device, name, role, unit, birthDate, gender, isValid);
-			tableRows.add(tableRow);
-				
-//			System.out.println("Inputed a row");
-		}
+			return true;
+		}catch (Exception e){
+            System.out.println("Error in ImportFileChamCongModel");
+            return false;
+        }
 	}
 }

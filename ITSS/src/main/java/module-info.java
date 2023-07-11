@@ -17,7 +17,12 @@ module project.itss.group11.itss {
 	requires opencsv;
 	requires javafx.base;
 
+	requires org.testng;
 
+//	requires junit;
+//	exports project.itss.group11.itss.test;
+//	opens project.itss.group11.itss.test to junit;
+	
     opens project.itss.group11.itss to javafx.fxml;
     exports project.itss.group11.itss;
     exports project.itss.group11.itss.controller;

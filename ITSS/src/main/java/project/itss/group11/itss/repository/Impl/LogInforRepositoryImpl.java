@@ -56,6 +56,7 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             Constant.pool.releaseConnection(connection);
         }catch (SQLException ex) {
             logger.error("Error when getLogInforByDay: ", ex);
+            
             throw new RuntimeException(ex);
         }
         return logInfors;
@@ -102,11 +103,20 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             pstmt.setInt(3,logInfor.getDevice());
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()){
-                if(resultSet.getInt(1)==1)
-                    return true;
+            	System.out.println("checkDuplicate resultSet has next");
+                if(resultSet.getInt(1)==1) {
+                	//resultSet.close();
+                    //pstmt.close();
+                    Constant.pool.releaseConnection(connection);
+                	return true;
+                }
+                //resultSet.close();
+                //pstmt.close();
+                Constant.pool.releaseConnection(connection);
             }
         }catch (Exception e){
             logger.error("Error in checkDuplicate: ", e);
+            return false;
         }
         return false;
     }
@@ -118,14 +128,16 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             Connection connection = Constant.pool.getConnection();
             Statement stmt = connection.createStatement();
             for(LogInfor logInfor : logInfors){
-                String sqlQuery = "INSERT INTO logcc VALUES('" + logInfor.getId() +
-                             "','" + logInfor.getTimeStamp() +
+                String sqlQuery = "INSERT INTO logcc VALUES(default" +
+                             ",'" + logInfor.getTimeStamp() +
                              "','" + logInfor.getEmployeeID() +
                              "','" + logInfor.getDevice() +
                              "')";
                 stmt.addBatch(sqlQuery);
             }
             result = stmt.executeBatch();
+            stmt.close();
+            Constant.pool.releaseConnection(connection);
         }catch (Exception e){
             logger.error("Error in imoprtLogCC ", e);
         }
@@ -140,6 +152,9 @@ public class LogInforRepositoryImpl implements LogInforRepository {
             pstmt.setInt(2,form.getNewDevice());
             pstmt.setInt(3,form.getIdlog());
             logger.info(form.getIdlog());
+            //resultSet.close();
+            pstmt.close();
+            Constant.pool.releaseConnection(connection);
             return  pstmt.executeUpdate();
         }catch (Exception e){
             logger.error("Error in updateInfor: ", e);

@@ -71,7 +71,7 @@ public class PreviewFileChamCongTableRowModel {
 		this.unit = new SimpleIntegerProperty(unit);
 		this.gender = new SimpleStringProperty(gender);
 		this.birtdate.set(birtdate);
-		selectCheckBox = new CheckBox();
+		this.selectCheckBox = new CheckBox();
 		if(!isValid) {
 			selectCheckBox.setDisable(true);
 			selectCheckBox.setText("ID does not exist");

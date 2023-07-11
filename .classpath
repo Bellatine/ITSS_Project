@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ITSS/src/main/java"/>
+	<classpathentry kind="src" path="ITSS/src/main/Test"/>
+	<classpathentry kind="lib" path="ITSS/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="ITSS/bin/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="ITSS/target/ITSS-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="ITSS/target/classes"/>
+</classpath>

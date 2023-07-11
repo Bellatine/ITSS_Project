@@ -26,7 +26,7 @@ public class ImportFileChamCongController{
 		this.importFileChamCongView = importFileChamCongView;
 	}
 	
-	public void handleCsvInput(File file) {
+	public boolean handleCsvInput(File file) {
 		System.out.println("Handle csv input");
 		importFileChamCongModel = new ImportFileChamCongModel();
 		FileReader fileReader = null;
@@ -36,6 +36,7 @@ public class ImportFileChamCongController{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		boolean isSuccess = false;
 		if (file != null) {
 			 //openFile(file);
 			CSVReader reader = new CSVReader(fileReader);
@@ -49,12 +50,22 @@ public class ImportFileChamCongController{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			importFileChamCongModel.inputRows(rows);
+			isSuccess = importFileChamCongModel.inputRows(rows);
 			importFileChamCongModel.checkDuplicate();
 			System.out.println("Handled csv input");
 		}
+		if(isSuccess) {
+			importFileChamCongView.showImportFileChamCongWorkspace();
+		}else {
+			importFileChamCongView.showTemplateWrongFileError();
+		}
+		return isSuccess;
 	}
 	
+	public ImportFileChamCongController() {
+		super();
+	}
+
 	public void handleShowTable() {
 		importFileChamCongView.showTable(importFileChamCongModel.getTableRows(), importFileChamCongModel.getIsDuplicate());
 	}

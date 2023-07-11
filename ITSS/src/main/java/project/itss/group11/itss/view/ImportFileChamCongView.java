@@ -23,6 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import project.itss.group11.itss.controller.ImportFileChamCongController;
 import project.itss.group11.itss.model.PreviewFileChamCongTableRowModel;
 
@@ -37,7 +38,8 @@ public class ImportFileChamCongView extends WorkspaceView{
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Chon file cham cong");
 		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("File cham cong","*.csv"));
-		File file = fileChooser.showOpenDialog(new Stage());
+		Window owner = Stage.getWindows().stream().filter(Window::isShowing).findFirst().orElse(null);
+		File file = fileChooser.showOpenDialog(owner);
 		return file;	
 	}
 	
@@ -178,13 +180,30 @@ public class ImportFileChamCongView extends WorkspaceView{
 		
 		System.out.println("Showed table");
 	}
+	
+	public void showTemplateWrongFileError() {
+		VBox vbox = new VBox();
+		vbox.setPrefSize(Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
+		vbox.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+		Label label = new Label("Template of the chosen file is wrong!");
+		vbox.getChildren().add(label);
+		vbox.setAlignment(Pos.CENTER);
+		AnchorPane.setTopAnchor(vbox, 0.0);
+		AnchorPane.setBottomAnchor(vbox, 0.0);
+		AnchorPane.setRightAnchor(vbox, 0.0);
+		AnchorPane.setLeftAnchor(vbox, 0.0);
+		mainWorkspaceAnchorPane.getChildren().clear();
+		mainWorkspaceAnchorPane.getChildren().add(vbox);
+		mainWorkspaceAnchorPane.applyCss();
+		mainWorkspaceAnchorPane.layout();
+	}
 
 	@Override
 	public void show() {
 		// TODO Auto-generated method stub
 		File file = showFileChooser();
 		importFileChamCongController.handleCsvInput(file);
-		showImportFileChamCongWorkspace();
+		
 		importFileChamCongController.handleShowTable();
 	}
 	

@@ -22,6 +22,7 @@ public class EmployeeInforRepositoryImpl implements EmployeeInforRepository {
     private static final Logger logger = LogManager.getLogger(EmployeeInforRepositoryImpl.class);
     private static final String getEmployeeInforQuery = "select * from employee where id = ?";
     private static final String getEmployeeUnitInforQuery = "select * from employee where unit = ?";
+    private static final String getAllEmployeeQuery = "select * from employee";
     @Override
     public ObservableList<Employee> getEmployeeUnitInfor(int unitID) {
         ObservableList<Employee> listEmployee = FXCollections.observableArrayList();
@@ -30,6 +31,24 @@ public class EmployeeInforRepositoryImpl implements EmployeeInforRepository {
             PreparedStatement pstmt = connection.prepareStatement(getEmployeeUnitInforQuery);
             pstmt.setInt(1,unitID);
             logger.info("Unit ID: " + unitID);
+            ResultSet resultSet = pstmt.executeQuery();
+            while (resultSet.next()){
+                Employee employee = new Employee(resultSet.getInt(1),resultSet.getString(2), resultSet.getTimestamp(3).toLocalDateTime().toLocalDate(), resultSet.getInt(4),resultSet.getInt(5),resultSet.getInt(6));
+                listEmployee.add(employee);
+            }
+        }catch (Exception e){
+            logger.error("Error in getEmployeeUnitInfor: ", e);
+        }
+        return listEmployee;
+    }
+    
+    public ObservableList<Employee> getAllEmployeeInfo() {
+        ObservableList<Employee> listEmployee = FXCollections.observableArrayList();
+        try{
+            Connection connection = Constant.pool.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(getAllEmployeeQuery);
+//            pstmt.setInt(1,unitID);
+//            logger.info("Unit ID: " + unitID);
             ResultSet resultSet = pstmt.executeQuery();
             while (resultSet.next()){
                 Employee employee = new Employee(resultSet.getInt(1),resultSet.getString(2), resultSet.getTimestamp(3).toLocalDateTime().toLocalDate(), resultSet.getInt(4),resultSet.getInt(5),resultSet.getInt(6));

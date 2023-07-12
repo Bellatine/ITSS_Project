@@ -69,6 +69,14 @@ public class QLNSView extends TemplateView{
 		});
 		Button btn1 = createOptionButton("Thông tin chấm công của tôi");
 		Button btn2 = createOptionButton("Xem thông tin chấm công của nhân viên");
+		
+		btn2.setOnMouseClicked(event -> {
+            try {
+                addToWorkspace("/project/itss/group11/itss/view/SearchEmployee.fxml");
+            } catch (IOException e) {
+                logger.error("Error in Employee view", e);
+            }
+        });
 		Button btn3 = createOptionButton("Xem yêu cầu chỉnh sửa chấm công");
 		btn3.setOnMouseClicked(event -> {
 			try {

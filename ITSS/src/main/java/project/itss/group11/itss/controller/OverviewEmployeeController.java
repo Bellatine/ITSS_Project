@@ -1,27 +1,29 @@
 package project.itss.group11.itss.controller;
 
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.util.Callback;
 import project.itss.group11.itss.model.TimekeepingOverview;
-import project.itss.group11.itss.service.IEmployeeTimekeepingOverview;
-import project.itss.group11.itss.service.Impl.EmployeeTimekeepingOverviewImpl;
-import project.itss.group11.itss.service.Impl.LoginServiceImpl;
-import project.itss.group11.itss.service.Impl.OverViewInforEmployeeUnitServiceImpl;
 import project.itss.group11.itss.service.LoginService;
 import project.itss.group11.itss.service.OverViewInforEmployeeUnitService;
+import project.itss.group11.itss.service.Impl.LoginServiceImpl;
+import project.itss.group11.itss.service.Impl.OverViewInforEmployeeUnitServiceImpl;
 
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-public class OverViewInforEmployeeUnitController extends WorkspaceController {
+public class OverviewEmployeeController extends WorkspaceController {
     public static LocalDate localDate = null;
     private static final LoginService loginService = new LoginServiceImpl();
     private static final OverViewInforEmployeeUnitService service = new OverViewInforEmployeeUnitServiceImpl();
@@ -77,8 +79,8 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
         AnchorPane.setLeftAnchor(tableView, 10.0);
         AnchorPane.setRightAnchor(tableView, 10.0);
         AnchorPane.setBottomAnchor(tableView, 10.0);
-        username.setText(loginService.getUserInfor(SearchInfEmployeeUnitController.employeeID).getName());
-        id_Employee.setText(String.valueOf(SearchInfEmployeeUnitController.employeeID));
+        username.setText(loginService.getUserInfor(SearchEmployeeController.employeeID).getName());
+        id_Employee.setText(String.valueOf(SearchEmployeeController.employeeID));
         time.setText(LocalDate.now().toString());
         day.setCellValueFactory(new PropertyValueFactory<>("day"));
         start.setCellValueFactory(new PropertyValueFactory<>("start"));
@@ -93,7 +95,7 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
         requestingBtn.setCellFactory(createButtonCellFactory("Request", "request-button"));
 
         if (OverViewInforEmployeeUnitController.localDate != null)
-            timekeepingOverviews = service.getTimekeepingByMonth(OverViewInforEmployeeUnitController.localDate,startTime,endTime,SearchInfEmployeeUnitController.employeeID);
+            timekeepingOverviews = service.getTimekeepingByMonth(OverViewInforEmployeeUnitController.localDate,startTime,endTime,SearchEmployeeController.employeeID);
         tableView.setItems(timekeepingOverviews);
     }
     private Callback<TableColumn<TimekeepingOverview, Button>, TableCell<TimekeepingOverview, Button>> createButtonCellFactory(String buttonText, String buttonStyleClass) {
@@ -142,7 +144,7 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
         else
             OverViewInforEmployeeUnitController.localDate = selectedDate;
 
-        timekeepingOverviews = service.getTimekeepingByMonth(OverViewInforEmployeeUnitController.localDate,startTime,endTime,SearchInfEmployeeUnitController.employeeID);
+        timekeepingOverviews = service.getTimekeepingByMonth(OverViewInforEmployeeUnitController.localDate,startTime,endTime,SearchEmployeeController.employeeID);
         tableView.setItems(timekeepingOverviews);
     }
 
@@ -152,9 +154,10 @@ public class OverViewInforEmployeeUnitController extends WorkspaceController {
     @FXML
     void backToPreviousPage(ActionEvent event) {
         try {
-            changeWorkspace("/project/itss/group11/itss/view/manager/SearchEmployee.fxml");
+            changeWorkspace("/project/itss/group11/itss/view/manager/ViewEmployeeUnit.fxml");
         }catch (Exception e) {
             logger.error("Error in BacktoPreviousPage");
         }
     }
 }
+

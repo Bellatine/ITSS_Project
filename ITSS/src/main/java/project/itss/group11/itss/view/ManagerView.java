@@ -45,7 +45,7 @@ public class ManagerView extends TemplateView{
         Button importViewUnitButton = createOptionButton("Xem chấm công đơn vị");
         importViewUnitButton.setOnMouseClicked(event -> {
             try {
-                addToWorkspace("/project/itss/group11/itss/view/manager/EmployeeLogInfoOverview.fxml");
+                addToWorkspace("/project/itss/group11/itss/view/manager/ViewEmployeeUnit.fxml");
             } catch (IOException e) {
                 logger.error("Error in Employee view", e);
             }

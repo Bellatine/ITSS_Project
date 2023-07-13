@@ -18,6 +18,7 @@ module project.itss.group11.itss {
 	requires javafx.base;
 
 	requires org.testng;
+	requires junit;
 
 //	requires junit;
 //	exports project.itss.group11.itss.test;

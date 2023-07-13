@@ -21,7 +21,7 @@ public class EmployeeInforRepositoryImpl implements EmployeeInforRepository {
 
     private static final Logger logger = LogManager.getLogger(EmployeeInforRepositoryImpl.class);
     private static final String getEmployeeInforQuery = "select * from employee where id = ?";
-    private static final String getEmployeeUnitInforQuery = "select * from employee where unit = ?";
+    private static final String getEmployeeUnitInforQuery = "select * from employee where \"Unit\" = ?";
     private static final String getAllEmployeeQuery = "select * from employee";
     @Override
     public ObservableList<Employee> getEmployeeUnitInfor(int unitID) {

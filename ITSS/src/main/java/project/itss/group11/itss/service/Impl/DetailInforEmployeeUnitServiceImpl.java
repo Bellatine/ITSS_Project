@@ -67,13 +67,14 @@ public class DetailInforEmployeeUnitServiceImpl implements DetailInforEmployeeUn
             t1.setReturnEarly("-");
             int machine = logInfors.get(0).getDevice();
             t1.setMachine(machine);
-            if(machine==0)
+            
+            if(machine==1)
                 t1.setType("Check in");
             else
                 t1.setType("Check out");
             timekeepingDetails.add(t1);
         }
-        System.out.println(logInfors.size());
+        
         if(logInfors.size()>=2){
             date2 = logInfors.get(1).getTimeStamp();
             TimekeepingDetail t2 = new TimekeepingDetail();
@@ -82,7 +83,8 @@ public class DetailInforEmployeeUnitServiceImpl implements DetailInforEmployeeUn
             t2.setComeLate("-");
             int machine = logInfors.get(1).getDevice();
             t2.setMachine(machine);
-            if(machine==0)
+            
+            if(machine==1)
                 t2.setType("Check in");
             else
                 t2.setType("Check out");

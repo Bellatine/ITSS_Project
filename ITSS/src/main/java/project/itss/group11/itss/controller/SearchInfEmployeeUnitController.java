@@ -60,6 +60,9 @@ public class SearchInfEmployeeUnitController extends WorkspaceController impleme
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         view.setCellFactory(createButtonCellFactory("View", "view-button"));
         employeeObservableList = service.employeeObservableList(Constant.employee.getUnit());
+        for(Employee i: employeeObservableList) {
+        	System.out.println(i);
+        }
         tableView.setItems(employeeObservableList);
     }
     @FXML

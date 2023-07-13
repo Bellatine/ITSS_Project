@@ -68,7 +68,7 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
             t1.setReturnEarly("-");
             int machine = logInfors.get(0).getDevice();
             t1.setMachine(machine);
-            if(machine==0)
+            if(machine==1)
                 t1.setType("Check in");
             else
                 t1.setType("Check out");
@@ -83,7 +83,7 @@ public class EmployeeDetailTimekeeping implements IEmployeeDetailTimekeeping {
             t2.setComeLate("-");
             int machine = logInfors.get(1).getDevice();
             t2.setMachine(machine);
-            if(machine==0)
+            if(machine==1)
                 t2.setType("Check in");
             else
                 t2.setType("Check out");
